@@ -18,6 +18,42 @@ public class Define
     public enum ObjectType
     {
         Player,
+        Monster,
+        Criminal,
+        RaidMonster,
+        Friend
+    }
+
+    public enum CreatureState
+    {
+        Idle,
+        Moving,
+        Attacking,
+    }
+
+    public enum EquipmentType
+    {
+        Helmet,
+        Necklace,
+        Armor,
+        Gloves,
+        Boots,
+        Belt,
+        Ring,
+    }
+
+    public enum JewelGrade
+    {
+        EX,
+        SSS,
+        SS,
+        S,
+        A,
+        B,
+        C,
+        D,
+        E,
+        F
     }
 
     public enum UIEvent

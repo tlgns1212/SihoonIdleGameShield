@@ -6,27 +6,38 @@ using UnityEngine;
 namespace Data
 {
 
-    #region  SectionItemData
-    // public class SectionItemData
-    // {
-    //     public int Id;
-    //     public int Seq;
-    //     public int NextId;
-    //     public string TitleText;
-    //     public string DescriptionText;
-    //     public List<int> StepIds;
-    // }
-    // [Serializable]
-    // public class SectionItemDataLoader : ILoader<int, SectionItemData>
-    // {
-    //     public List<SectionItemData> SectionItems = new List<SectionItemData>();
-    //     public Dictionary<int, SectionItemData> MakeDict()
-    //     {
-    //         Dictionary<int, SectionItemData> dict = new Dictionary<int, SectionItemData>();
-    //         foreach (SectionItemData sectionItemData in SectionItems)
-    //             dict.Add(sectionItemData.Id, sectionItemData);
-    //         return dict;
-    //     }
-    // }
+    #region  CreatureData
+    public class CreatureData
+    {
+        public int DataID;
+        public string DescriptionTextID;
+        public string PrefabLabel;
+        public float MaxHp;
+        public float MaxHpBonus;
+        public float Atk;
+        public float AtkBonus;
+        public float MoveSpeed;
+        public float MoveSpeedBonus;
+        public float AtkRate;
+        public float AtkRateBonus;
+        public float CriDamage;
+        public float CriDamageBonus;
+        public float CriRate;
+        public float CriRateBonus;
+        public string IconLabel;
+    }
+
+    [Serializable]
+    public class CreatureDataLoader : ILoader<int, CreatureData>
+    {
+        public List<CreatureData> creatures = new List<CreatureData>();
+        public Dictionary<int, CreatureData> MakeDict()
+        {
+            Dictionary<int, CreatureData> dict = new Dictionary<int, CreatureData>();
+            foreach (CreatureData creature in creatures)
+                dict.Add(creature.DataID, creature);
+            return dict;
+        }
+    }
     #endregion
 }

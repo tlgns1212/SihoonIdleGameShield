@@ -22,10 +22,10 @@ public class BaseController : MonoBehaviour
         _init = true;
         return true;
     }
-    //void Update()
-    //{
+    // void Update()
+    // {
     //    UpdateController();
-    //}
+    // }
 
-    //public virtual void UpdateController() { }
+    // public virtual void UpdateController() { }
 }

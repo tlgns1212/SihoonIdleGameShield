@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManagerEx : MonoBehaviour
+public class SceneManagerEx
 {
     public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
 
@@ -16,7 +16,7 @@ public class SceneManagerEx : MonoBehaviour
                 // anim1.transform.SetParent(parents);
 
                 Time.timeScale = 1;
-                StartCoroutine(LoadSceneAsync(GetSceneName(type)));
+                CoroutineManager.StartCoroutine(LoadSceneAsync(GetSceneName(type)));
                 // anim1.SetInfo(type, () =>
                 // {
                 //     // Managers.Resource.Destroy(Managers.UI.SceneUI.gameObject);
@@ -29,14 +29,14 @@ public class SceneManagerEx : MonoBehaviour
                 // anim2.transform.SetParent(parents);
 
                 Time.timeScale = 1;
-                StartCoroutine(LoadSceneAsync(GetSceneName(type)));
+                CoroutineManager.StartCoroutine(LoadSceneAsync(GetSceneName(type)));
                 break;
             case Define.Scene.LobbyScene:
                 // SceneChangeAnimation_In anim3 = Managers.Resource.Instantiate("SceneChangeAnimation_In").GetOrAddComponent<SceneChangeAnimation_In>();
                 // anim3.transform.SetParent(parents);
 
                 Time.timeScale = 1;
-                StartCoroutine(LoadSceneAsync(GetSceneName(type)));
+                CoroutineManager.StartCoroutine(LoadSceneAsync(GetSceneName(type)));
                 break;
         }
 

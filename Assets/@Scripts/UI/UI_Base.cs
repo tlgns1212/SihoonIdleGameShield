@@ -2,11 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public abstract class UI_Base : MonoBehaviour
@@ -26,7 +24,6 @@ public abstract class UI_Base : MonoBehaviour
     private void Start()
     {
         Init();
-        LocalizeAllTexts();
     }
 
     protected void Bind<T>(Type type) where T : UnityEngine.Object
@@ -112,14 +109,5 @@ public abstract class UI_Base : MonoBehaviour
     {
         contentObject.transform.localScale = new Vector3(0.8f, 0.8f, 1);
         contentObject.transform.DOScale(1f, 0.1f).SetEase(Ease.InOutBack).SetUpdate(true);
-    }
-
-    protected virtual void LocalizeAllTexts()
-    {
-    }
-
-    protected string ConvertToJson<T>(T data)
-    {
-        return JsonConvert.SerializeObject(data);
     }
 }

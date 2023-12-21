@@ -22,7 +22,7 @@ public class Managers : MonoBehaviour
     DataManager _data = new DataManager();
     PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
-    SceneManagerEx _scene;
+    SceneManagerEx _scene = new SceneManagerEx();
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
 
@@ -48,7 +48,6 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
             s_instance._sound.Init();
-            s_instance._scene = go.AddComponent<SceneManagerEx>();
             // s_instance._time = go.AddComponent<TimeManager>();
 
             // Ads.Init();

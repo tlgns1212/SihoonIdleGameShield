@@ -7,21 +7,10 @@ using UnityEngine.UIElements;
 
 public class ObjectManager
 {
-    // public PlayerController Player { get; private set; }
-    // public HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
+    public PlayerController Player { get; private set; }
+    public HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
+    public HashSet<FriendController> Friends { get; } = new HashSet<FriendController>();
 
-    // public Transform SkillTransform
-    // {
-    //     get
-    //     {
-    //         GameObject root = GameObject.Find("@Skill");
-    //         if (root == null)
-    //         {
-    //             root = new GameObject { name = "@Skill" };
-    //         }
-    //         return root.transform;
-    //     }
-    // }
 
     public ObjectManager()
     {
@@ -35,36 +24,70 @@ public class ObjectManager
 
     public void Clear()
     {
-        // Monsters.Clear();
+        Monsters.Clear();
+        Friends.Clear();
+    }
+
+    public void LoadMap(string mapName)
+    {
+        GameObject objMap = Managers.Resource.Instantiate(mapName);
+        objMap.transform.position = Vector3.zero;
+        objMap.name = "@Map";
+
+        objMap.GetComponent<Map>().Init();
+    }
+
+    public void ShowDamageFont(Vector2 pos, float damage, Transform parent, bool isCritical = false)
+    {
+        string prefabName;
+        if (isCritical)
+            prefabName = "CriticalDamageFont";
+        else
+            prefabName = "DamageFont";
+
+        GameObject go = Managers.Resource.Instantiate(prefabName, pooling: true);
+
+        DamageFont damageText = go.GetOrAddComponent<DamageFont>();
+        damageText.SetInfo(pos, damage, parent, isCritical);
     }
 
     public T Spawn<T>(Vector3 position, int templateID = 0, string prefabName = "") where T : BaseController
     {
         System.Type type = typeof(T);
 
-        // if (type == typeof(PlayerController))
-        // {
-        //     GameObject go = Managers.Resource.Instantiate(Managers.Data.CreatureDic[templateID].PrefabLabel);
-        //     go.transform.position = position;
-        //     PlayerController pc = go.GetOrAddComponent<PlayerController>();
-        //     pc.SetInfo(templateID);
-        //     Player = pc;
-        //     Managers.Game.Player = pc;
+        if (type == typeof(PlayerController))
+        {
+            GameObject go = Managers.Resource.Instantiate(Managers.Data.CreatureDic[templateID].PrefabLabel);
+            go.transform.position = position;
+            PlayerController pc = go.GetOrAddComponent<PlayerController>();
+            pc.SetInfo(templateID);
+            Player = pc;
+            Managers.Game.Player = pc;
 
-        //     return pc as T;
-        // }
-        // else if (type == typeof(MonsterController))
-        // {
-        //     Data.CreatureData cd = Managers.Data.CreatureDic[templateID];
-        //     GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}", pooling: true);
-        //     MonsterController mc = go.GetOrAddComponent<MonsterController>();
-        //     go.transform.position = position;
-        //     mc.SetInfo(templateID);
-        //     go.name = cd.PrefabLabel;
-        //     Monsters.Add(mc);
+            return pc as T;
+        }
+        else if (type == typeof(MonsterController))
+        {
+            Data.CreatureData cd = Managers.Data.CreatureDic[templateID];
+            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}", pooling: true);
+            MonsterController mc = go.GetOrAddComponent<MonsterController>();
+            go.transform.position = position;
+            mc.SetInfo(templateID);
+            go.name = cd.PrefabLabel;
+            Monsters.Add(mc);
 
-        //     return mc as T;
-        // }
+            return mc as T;
+        }
+        else if (type == typeof(FriendController))
+        {
+            Data.CreatureData cd = Managers.Data.CreatureDic[templateID];
+            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}", pooling: true);
+            FriendController fc = go.GetOrAddComponent<FriendController>();
+            go.transform.position = position;
+            fc.SetInfo(templateID);
+            go.name = cd.PrefabLabel;
+            Friends.Add(fc);
+        }
 
         return null;
     }
@@ -72,18 +95,20 @@ public class ObjectManager
     public void Despawn<T>(T obj) where T : BaseController
     {
         System.Type type = typeof(T);
-
-        // if (type == typeof(PlayerController))
-        // {
-        //     // ?
-        // }
-
-        // else if (type == typeof(MonsterController))
-        // {
-        //     Monsters.Remove(obj as MonsterController);
-        //     Managers.Resource.Destroy(obj.gameObject);
-        // }
+        if (type == typeof(PlayerController))
+        {
+            // ?
+        }
+        else if (type == typeof(MonsterController))
+        {
+            Monsters.Remove(obj as MonsterController);
+            Managers.Resource.Destroy(obj.gameObject);
+        }
+        else if (type == typeof(FriendController))
+        {
+            Friends.Remove(obj as FriendController);
+            Managers.Resource.Destroy(obj.gameObject);
+        }
 
     }
-
 }
