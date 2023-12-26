@@ -8,7 +8,7 @@
             "MaxHpBonus": 1.0,
             "Atk": 1.0,
             "AtkBonus": 1.0,
-            "MoveSpeed": 1.0,
+            "MoveSpeed": 0,
             "MoveSpeedBonus": 1.0,
             "AtkRate": 1.0,
             "AtkRateBonus": 1.0,
@@ -18,5 +18,23 @@
             "CriRateBonus": 1.0,
             "IconLabel": "Player_Icon.sprite"
         },
+        {
+            "DataId": 10000002,
+            "DescriptionTextID": "기본 몬스터",
+            "PrefabLabel": "MonsterPrefab",
+            "MaxHp": 100.0,
+            "MaxHpBonus": 1.0,
+            "Atk": 1.0,
+            "AtkBonus": 1.0,
+            "MoveSpeed": 0.005,
+            "MoveSpeedBonus": 1.0,
+            "AtkRate": 1.0,
+            "AtkRateBonus": 1.0,
+            "CriDamage": 1.0,
+            "CriDamageBonus": 1.0,
+            "CriRate": 0.0,
+            "CriRateBonus": 1.0,
+            "IconLabel": "Monster_Icon.sprite"
+        }
     ]
 }

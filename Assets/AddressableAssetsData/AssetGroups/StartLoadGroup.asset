@@ -155,6 +155,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2ee2893cdb409343abf87f53eac458a
+    m_Address: CreatureDefaultMat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca800ba2b7bc272429cf4ddee6a52b3b
+    m_Address: DamagedEffectMat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc11b726798ba934eae8b839fb5dc141
+    m_Address: UI_ResourcesPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 095b339e3a9f56947926ec11bbc684f1, type: 2}
   m_SchemaSet:

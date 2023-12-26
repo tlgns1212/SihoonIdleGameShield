@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 3150713370174324471}
   - component: {fileID: 2482773950643967466}
   m_Layer: 5
-  m_Name: GoldImage
+  m_Name: BuyGoldImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,6 +1108,7 @@ GameObject:
   - component: {fileID: 717571084691486626}
   - component: {fileID: 2068458272293486337}
   - component: {fileID: 6882302967817597625}
+  - component: {fileID: -7689509277800808892}
   m_Layer: 5
   m_Name: UI_SaviourItem
   m_TagString: Untagged
@@ -1178,6 +1179,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-7689509277800808892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713808152863928360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0676ecbeb4fdf044ab377839ca8956a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8070860073067339255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1337,7 @@ GameObject:
   - component: {fileID: 6738462049591481602}
   - component: {fileID: 5435263397300238596}
   m_Layer: 5
-  m_Name: PlusNumText
+  m_Name: PlusGoldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1592,7 +1605,7 @@ GameObject:
   - component: {fileID: 5416611021918905433}
   - component: {fileID: 6560072610847386884}
   m_Layer: 5
-  m_Name: GoldImage
+  m_Name: PlusGoldImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

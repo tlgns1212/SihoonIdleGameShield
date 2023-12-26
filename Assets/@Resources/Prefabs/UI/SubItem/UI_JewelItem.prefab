@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2388941907480941196}
   - component: {fileID: 8084536849214244062}
   - component: {fileID: 7352088193028385593}
+  - component: {fileID: -1508073071280683924}
   m_Layer: 5
   m_Name: UI_JewelItem
   m_TagString: Untagged
@@ -317,3 +318,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-1508073071280683924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334909767690887052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d28cae94e6ea5845b44e428cf639fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

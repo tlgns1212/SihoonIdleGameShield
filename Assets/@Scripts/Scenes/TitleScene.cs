@@ -9,6 +9,7 @@ public class TestScene : BaseScene
         // Managers.Resource.Instantiate("UI_StartScene").GetOrAddComponent<UI_StartScene>();
         base.Init();
         SceneType = Define.Scene.TitleScene;
+        Application.targetFrameRate = 60;
     }
 
 

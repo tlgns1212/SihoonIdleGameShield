@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9167d2e7c0a928488cbe1ea0bb1a5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 0}
 --- !u!1 &593313811
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836098564}
   - component: {fileID: 836098563}
+  - component: {fileID: 836098565}
   m_Layer: 0
   m_Name: GameScene
   m_TagString: Untagged
@@ -340,6 +342,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836098565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836098562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6367b32fb1fee4b810ea547e7b81f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fFont_Size: 31
+  Red: 0
+  Green: 0
+  Blue: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

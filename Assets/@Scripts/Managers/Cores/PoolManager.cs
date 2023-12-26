@@ -42,7 +42,7 @@ class Pool
     #region Funcs
     GameObject OnCreate()
     {
-        GameObject go = GameObject.Instantiate(_prefab);
+        GameObject go = Object.Instantiate(_prefab);
         go.transform.SetParent(Root);
         go.name = _prefab.name;
         return go;
@@ -50,7 +50,8 @@ class Pool
 
     void OnGet(GameObject go)
     {
-        go.SetActive(true);
+        if (go != null)
+            go.SetActive(true);
     }
 
     void OnRelease(GameObject go)

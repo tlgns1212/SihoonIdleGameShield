@@ -8,17 +8,10 @@ using UnityEngine.EventSystems;
 public class UI_ShieldPopup : UI_Popup
 {
     #region Enum
-    enum Texts
-    {
-    }
-
-    enum Buttons
-    {
-    }
-
     enum GameObjects
     {
-        ShieldTab
+        ShieldTab,
+        ShieldItem,
     }
     #endregion
 
@@ -36,13 +29,19 @@ public class UI_ShieldPopup : UI_Popup
 
         BindObject(typeof(GameObjects));
 
-
-        _scrollRect = GetObject((int)GameObjects.ShieldTab).GetComponent<ScrollRect>();
-        gameObject.BindEvent(null, OnDrag, Define.UIEvent.Drag);
-        gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
-        gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
+        _scrollRect = Util.FindChild<ScrollRect>(gameObject);
 
         Refresh();
+
+        GetObject((int)GameObjects.ShieldTab).BindEvent(null, OnDrag, Define.UIEvent.Drag);
+        GetObject((int)GameObjects.ShieldTab).BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
+        GetObject((int)GameObjects.ShieldTab).BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
+
+        for (int i = 0; i < 10; i++)
+        {
+            UI_ShieldItem si = Managers.UI.MakeSubItem<UI_ShieldItem>(GetObject((int)GameObjects.ShieldItem).transform);
+            si.SetInfo(4, _scrollRect);
+        }
 
         return true;
     }
@@ -57,7 +56,7 @@ public class UI_ShieldPopup : UI_Popup
 
     }
 
-    #region 드래그
+    #region 버튼 스크롤 대응
     public void OnDrag(BaseEventData baseEventData)
     {
         PointerEventData pointerEventData = baseEventData as PointerEventData;

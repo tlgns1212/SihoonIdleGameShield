@@ -20,15 +20,6 @@ public class UI_HpBar : UI_Base
         return true;
     }
 
-    private void Update()
-    {
-        Transform parent = transform.parent;
-        transform.rotation = Camera.main.transform.rotation;
-
-        float ratio = Managers.Game.Player.Hp / (float)Managers.Game.Player.MaxHp;
-        SetHpRatio(ratio);
-    }
-
     public void SetHpRatio(float ratio)
     {
         GetObject((int)GameObjects.HPBar).GetComponent<Slider>().value = ratio;

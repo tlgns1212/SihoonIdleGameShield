@@ -16,11 +16,13 @@ public class CreatureController : BaseController
     public Rigidbody2D _rigidBody { get; set; }
     public Animator Anim { get; set; }
     public CreatureData CreatureData;
+    public UI_HpBar HpBar;
 
     public virtual int DataID { get; set; }
     public virtual float Hp { get; set; }
     public virtual float MaxHp { get; set; }
     public virtual float MaxHpBonus { get; set; }
+    public float BaseSpeed { get; } = 40f;
 
     public Vector3 CenterPosition
     {
@@ -58,6 +60,10 @@ public class CreatureController : BaseController
         Anim = GetComponent<Animator>();
         if (Anim == null)
             Anim = Util.FindChild<Animator>(gameObject);
+
+        HpBar = GetComponent<UI_HpBar>();
+        if (HpBar == null)
+            HpBar = Util.FindChild<UI_HpBar>(gameObject);
 
         return true;
     }
@@ -104,8 +110,9 @@ public class CreatureController : BaseController
 
     public virtual void OnDead()
     {
-        _rigidBody.simulated = false;
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.position = new Vector3(Managers.Game.Player.transform.position.x + 10, 0, 0);
+        // TODO 몬스터 ID 찾아주기
+        SetInfo(10000002);
     }
 
     public virtual void InitCreatureStat(bool isFullHp = true)
@@ -115,6 +122,7 @@ public class CreatureController : BaseController
 
         MaxHp = CreatureData.MaxHp + (CreatureData.MaxHpBonus /*  * waveRate*/);
         Hp = MaxHp;
+        MaxHpBonus = CreatureData.MaxHpBonus;
     }
 
     public virtual void SetInfo(int creatureID)
@@ -146,7 +154,7 @@ public class CreatureController : BaseController
         {
             isPlayDamagedAnim = true;
             DefaultMat = Managers.Resource.Load<Material>("CreatureDefaultMat");
-            HitEffectMat = Managers.Resource.Load<Material>("PaintWhite");
+            HitEffectMat = Managers.Resource.Load<Material>("DamagedEffectMat");
 
             // Damaged Animation
             CreatureSprite.material = HitEffectMat;
@@ -159,5 +167,10 @@ public class CreatureController : BaseController
             }
             isPlayDamagedAnim = false;
         }
+    }
+
+    private void Update()
+    {
+        HpBar.SetHpRatio(Hp / MaxHp);
     }
 }

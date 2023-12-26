@@ -19,6 +19,7 @@ public class GameScene : BaseScene
         base.Init();
         SceneType = Define.Scene.GameScene;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Time.timeScale = 1;
         _game = Managers.Game;
 
         if (_game.ContinueInfo.IsContinue == true)
@@ -46,6 +47,7 @@ public class GameScene : BaseScene
         if (_spawningPool == null)
             _spawningPool = gameObject.AddComponent<SpawningPool>();
 
+        _spawningPool.StartSpawn();
         // TODO MapName
         Managers.Object.LoadMap("Map_01");
     }

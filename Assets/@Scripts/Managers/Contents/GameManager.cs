@@ -222,6 +222,9 @@ public class GameManager
     {
         _path = Application.persistentDataPath + "/" + UserName + ".json";
 
+        //TODO TEmp Clear
+        _gameData.ContinueInfo.Clear();
+
         if (File.Exists(_path) == false)
         {
             Init();

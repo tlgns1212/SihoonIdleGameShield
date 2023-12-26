@@ -203,7 +203,7 @@ public class UIManager
             return;
         }
 
-        if (_popupStack.Count > 0)
+        if (_popupStack.Count < 0)
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
