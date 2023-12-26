@@ -29,6 +29,7 @@ public class PlayerController : CreatureController
     public PlayerStat StatViewer = new PlayerStat();
     protected MonsterController _targetMC;
 
+
     public override int DataID
     {
         get { return Managers.Game.ContinueInfo.PlayerDataID; }

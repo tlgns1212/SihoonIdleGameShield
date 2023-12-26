@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 
 public class MonsterController : CreatureController
 {
+    protected MonsterData MonsterData;
 
     private void OnEnable()
     {
@@ -24,9 +26,57 @@ public class MonsterController : CreatureController
         return true;
     }
 
+    public override void SetInfo(int creatureID)
+    {
+        DataID = creatureID;
+        MonsterData = Managers.Data.MonsterDic[creatureID];
+        InitCreatureStat();
+        CreatureSprite.sprite = Managers.Resource.Load<Sprite>(CreatureData.IconLabel);
+    }
+
+
     public override void OnDead()
     {
         base.OnDead();
-
+        float goldDRate = MonsterData.GoldDropRate;
+        float manaDRate = MonsterData.ManaDropRate;
+        float dimensionEnergyDRate = MonsterData.DimensionEnergyDropRate;
+        float rubyDRate = MonsterData.RubyDropRate;
+        if (goldDRate >= 1.0f)
+        {
+            Managers.UI.ShowResourceToast("Gold.sprite", (Managers.Game.UserLevel * goldDRate).ToString());
+        }
+        else
+        {
+            if (UnityEngine.Random.value < goldDRate)
+                Managers.UI.ShowResourceToast("Gold.sprite", Managers.Game.UserLevel.ToString());
+        }
+        if (manaDRate >= 1.0f)
+        {
+            Managers.UI.ShowResourceToast("Mana.sprite", (Managers.Game.UserLevel * manaDRate).ToString());
+        }
+        else
+        {
+            if (UnityEngine.Random.value < manaDRate)
+                Managers.UI.ShowResourceToast("Mana.sprite", Managers.Game.UserLevel.ToString());
+        }
+        if (dimensionEnergyDRate >= 1.0f)
+        {
+            Managers.UI.ShowResourceToast("DimensionEnergy.sprite", (Managers.Game.UserLevel * dimensionEnergyDRate).ToString());
+        }
+        else
+        {
+            if (UnityEngine.Random.value < dimensionEnergyDRate)
+                Managers.UI.ShowResourceToast("DimensionEnergy.sprite", Managers.Game.UserLevel.ToString());
+        }
+        if (rubyDRate >= 1.0f)
+        {
+            Managers.UI.ShowResourceToast("Ruby.sprite", (Managers.Game.UserLevel * rubyDRate).ToString());
+        }
+        else
+        {
+            if (UnityEngine.Random.value < rubyDRate)
+                Managers.UI.ShowResourceToast("Ruby.sprite", Managers.Game.UserLevel.ToString());
+        }
     }
 }

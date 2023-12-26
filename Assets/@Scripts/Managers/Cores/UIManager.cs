@@ -10,9 +10,11 @@ public class UIManager
 {
     int _order = 10;
     int _toastOrder = 500;
+    int _resourceToastOrder = 400;
 
     Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
     Stack<UI_Toast> _toastStack = new Stack<UI_Toast>();
+    Stack<UI_ResourceGet> _resourceToastStack = new Stack<UI_ResourceGet>();
     UI_Scene _sceneUI = null;
     public UI_Scene SceneUI { get { return _sceneUI; } }
 
@@ -182,6 +184,36 @@ public class UIManager
         toast = null;
         _toastOrder--;
     }
+
+    public UI_ResourceGet ShowResourceToast(string img, string msg)
+    {
+        string name = typeof(UI_ResourceGet).Name;
+        GameObject go = Managers.Resource.Instantiate($"{name}", pooling: true);
+        UI_ResourceGet popup = Util.GetOrAddComponent<UI_ResourceGet>(go);
+        popup.SetInfo(img, msg);
+        _resourceToastStack.Push(popup);
+        go.transform.SetParent(Root.transform);
+        // 하는중 (ResourceToast 좀 중구난방으로 소환하기)
+        CoroutineManager.StartCoroutine(CoCloseResourceToastUI());
+        return popup;
+    }
+
+    IEnumerator CoCloseResourceToastUI()
+    {
+        yield return new WaitForSeconds(1f);
+        CloseResourceToastUI();
+    }
+
+    public void CloseResourceToastUI()
+    {
+        if (_resourceToastStack.Count == 0)
+            return;
+
+        UI_ResourceGet resourceToast = _resourceToastStack.Pop();
+        Managers.Resource.Destroy(resourceToast.gameObject);
+        resourceToast = null;
+    }
+
 
     public int GetPopupCount()
     {

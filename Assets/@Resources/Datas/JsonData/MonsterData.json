@@ -1,0 +1,52 @@
+{
+    "monsters": [
+        {
+            "DataId": 10000001,
+            "DescriptionTextID": "기본 몬스터",
+            "PrefabLabel": "MonsterPrefab",
+            "MaxHp": 100.0,
+            "MaxHpBonus": 1.0,
+            "GoldDropRate":1,
+            "ManaDropRate":0.01,
+            "DimensionEnergyDropRate":0,
+            "RubyDropRate":0.0001,
+            "IconLabel": "Monster_Icon.sprite"
+        },
+        {
+            "DataId": 10000002,
+            "DescriptionTextID": "스테이지 보스 몬스터",
+            "PrefabLabel": "MonsterPrefab",
+            "MaxHp": 1000.0,
+            "MaxHpBonus": 1.0,
+            "GoldDropRate":5,
+            "ManaDropRate":1,
+            "DimensionEnergyDropRate":0,
+            "RubyDropRate":0.0005,
+            "IconLabel": "Monster_Icon.sprite"
+        },
+        {
+            "DataId": 10000003,
+            "DescriptionTextID": "준 보스 몬스터",
+            "PrefabLabel": "MonsterPrefab",
+            "MaxHp": 10000.0,
+            "MaxHpBonus": 1.0,
+            "GoldDropRate":10,
+            "ManaDropRate":2,
+            "DimensionEnergyDropRate":0,
+            "RubyDropRate":0.001,
+            "IconLabel": "Monster_Icon.sprite"
+        },
+        {
+            "DataId": 10000004,
+            "DescriptionTextID": "보스 몬스터",
+            "PrefabLabel": "MonsterPrefab",
+            "MaxHp": 100000.0,
+            "MaxHpBonus": 1.0,
+            "GoldDropRate":20,
+            "ManaDropRate":5,
+            "DimensionEnergyDropRate":0.0001,
+            "RubyDropRate":1,
+            "IconLabel": "Monster_Icon.sprite"
+        }
+    ]
+}

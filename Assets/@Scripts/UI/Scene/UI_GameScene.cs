@@ -62,7 +62,7 @@ public class UI_GameScene : UI_Scene
     #endregion
 
 
-
+    UI_ResourcesPopup _resourcesPopupUI;
     UI_AccessoriesPopup _accessoriesPopupUI;
     bool _isSelectedAccessories = false;
     UI_DungeonPopup _dungeonPopupUI;
@@ -103,6 +103,7 @@ public class UI_GameScene : UI_Scene
         GetToggle((int)Toggles.ShopToggle).gameObject.BindEvent(OnClickShopToggle);
 
 
+        _resourcesPopupUI = Managers.UI.ShowPopupUI<UI_ResourcesPopup>();
         _accessoriesPopupUI = Managers.UI.ShowPopupUI<UI_AccessoriesPopup>();
         _dungeonPopupUI = Managers.UI.ShowPopupUI<UI_DungeonPopup>();
         _equipmentPopupUI = Managers.UI.ShowPopupUI<UI_EquipmentPopup>();

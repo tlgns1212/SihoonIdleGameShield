@@ -107,22 +107,42 @@ public class GameManager
     public int Gold
     {
         get { return _gameData.Gold; }
-        set { _gameData.Gold = value; }
+        set
+        {
+            _gameData.Gold = value;
+            SaveGame();
+            OnResourcesChanged?.Invoke();
+        }
     }
     public int Mana
     {
         get { return _gameData.Mana; }
-        set { _gameData.Mana = value; }
+        set
+        {
+            _gameData.Mana = value;
+            SaveGame();
+            OnResourcesChanged?.Invoke();
+        }
     }
     public int Ruby
     {
         get { return _gameData.Ruby; }
-        set { _gameData.Ruby = value; }
+        set
+        {
+            _gameData.Ruby = value;
+            SaveGame();
+            OnResourcesChanged?.Invoke();
+        }
     }
     public int DimensionEnergy
     {
         get { return _gameData.DimensionEnergy; }
-        set { _gameData.DimensionEnergy = value; }
+        set
+        {
+            _gameData.DimensionEnergy = value;
+            SaveGame();
+            OnResourcesChanged?.Invoke();
+        }
     }
     public int BGMSound
     {
@@ -152,6 +172,7 @@ public class GameManager
 
 
     #region Action
+    public event Action OnResourcesChanged;
     #endregion
 
     public CameraController CameraController { get; set; }
