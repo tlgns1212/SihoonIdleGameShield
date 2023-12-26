@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UI_ShieldPopup : UI_Popup
 {
@@ -13,7 +15,14 @@ public class UI_ShieldPopup : UI_Popup
     enum Buttons
     {
     }
+
+    enum GameObjects
+    {
+        ShieldTab
+    }
     #endregion
+
+    ScrollRect _scrollRect;
 
     private void Awake()
     {
@@ -24,6 +33,14 @@ public class UI_ShieldPopup : UI_Popup
     {
         if (base.Init() == false)
             return false;
+
+        BindObject(typeof(GameObjects));
+
+
+        _scrollRect = GetObject((int)GameObjects.ShieldTab).GetComponent<ScrollRect>();
+        gameObject.BindEvent(null, OnDrag, Define.UIEvent.Drag);
+        gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
+        gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
 
         Refresh();
 
@@ -39,4 +56,24 @@ public class UI_ShieldPopup : UI_Popup
     {
 
     }
+
+    #region 드래그
+    public void OnDrag(BaseEventData baseEventData)
+    {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        _scrollRect.OnDrag(pointerEventData);
+    }
+
+    public void OnBeginDrag(BaseEventData baseEventData)
+    {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        _scrollRect.OnBeginDrag(pointerEventData);
+    }
+
+    public void OnEndDrag(BaseEventData baseEventData)
+    {
+        PointerEventData pointerEventData = baseEventData as PointerEventData;
+        _scrollRect.OnEndDrag(pointerEventData);
+    }
+    #endregion
 }

@@ -47,7 +47,7 @@ public class GameScene : BaseScene
             _spawningPool = gameObject.AddComponent<SpawningPool>();
 
         // TODO MapName
-        Managers.Object.LoadMap("MapName");
+        Managers.Object.LoadMap("Map_01");
     }
 
     public override void Clear()

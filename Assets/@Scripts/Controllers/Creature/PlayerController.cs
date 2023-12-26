@@ -17,4 +17,47 @@ public class PlayerController : CreatureController
     public float CriRateBonus { get; set; }
     public float CriDamage { get; set; }
     public float CriDamageBonus { get; set; }
+
+    [SerializeField]
+    bool _shouldAttack = false;
+    bool ShouldAttack
+    {
+        get { return _shouldAttack; }
+        set { _shouldAttack = value;
+            Anim.SetBool("ShouldAttack", _shouldAttack);
+        }
+    }
+
+    public override bool Init()
+    {
+        if (base.Init() == false)
+            return false;
+
+        FindObjectOfType<CameraController>()._playerTransform = gameObject.transform;
+        CreatureState = Define.CreatureState.Moving;
+
+        return true;
+    }
+
+    protected override void UpdateMoving()
+    {
+        ShouldAttack = false;
+        Vector3 moveVel = (Vector3.forward * MoveSpeed) * MoveSpeedBonus;
+        _rigidBody.AddForce(moveVel, ForceMode2D.Force);
+    }
+
+    protected override void UpdateAttacking()
+    {
+        ShouldAttack = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CreatureState = Define.CreatureState.Attacking;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        CreatureState = Define.CreatureState.Moving;
+    }
 }

@@ -59,11 +59,6 @@ public class UI_GameScene : UI_Scene
         ShopText,
     }
 
-    enum Images
-    {
-        BG,
-
-    }
     #endregion
 
 
@@ -97,7 +92,6 @@ public class UI_GameScene : UI_Scene
         BindButton(typeof(Buttons));
         BindToggle(typeof(Toggles));
         BindText(typeof(Texts));
-        BindImage(typeof(Images));
 
         GetToggle((int)Toggles.AccessoriesToggle).gameObject.BindEvent(OnClickAccessoriesToggle);
         GetToggle((int)Toggles.DungeonToggle).gameObject.BindEvent(OnClickDungeonToggle);

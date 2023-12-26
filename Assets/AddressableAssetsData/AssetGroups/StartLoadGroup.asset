@@ -125,6 +125,36 @@ MonoBehaviour:
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea59532b17e6045fca3c837e0e5723fd
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 149442916b1ac4107af6fd0d5af54dd6
+    m_Address: MonsterPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e045cce60eef40a18bb33254dc3ea50
+    m_Address: UI_HPBar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d058bab0ec29d4997a7b8cbb1a3eab02
+    m_Address: CreatureData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ab5d7ec83e0f498c80697f3261f9fd4
+    m_Address: Map_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 095b339e3a9f56947926ec11bbc684f1, type: 2}
   m_SchemaSet:

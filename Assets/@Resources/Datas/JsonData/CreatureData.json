@@ -1,0 +1,22 @@
+{
+    "creatures": [
+        {
+            "DataId": 10000001,
+            "DescriptionTextID": "기본 플레이어",
+            "PrefabLabel": "Player",
+            "MaxHp": 100.0,
+            "MaxHpBonus": 1.0,
+            "Atk": 1.0,
+            "AtkBonus": 1.0,
+            "MoveSpeed": 1.0,
+            "MoveSpeedBonus": 1.0,
+            "AtkRate": 1.0,
+            "AtkRateBonus": 1.0,
+            "CriDamage": 1.0,
+            "CriDamageBonus": 1.0,
+            "CriRate": 0.0,
+            "CriRateBonus": 1.0,
+            "IconLabel": "Player_Icon.sprite"
+        },
+    ]
+}
