@@ -1,0 +1,249 @@
+{
+    "jewels": [
+        {
+            "DataId": 10001,
+            "JewelName": "빨간쥬얼",
+            "Grade": "F",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },
+        {
+            "DataId": 10002,
+            "JewelName": "빨간쥬얼",
+            "Grade": "E",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10003,
+            "JewelName": "빨간쥬얼",
+            "Grade": "D",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10004,
+            "JewelName": "빨간쥬얼",
+            "Grade": "C",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10005,
+            "JewelName": "빨간쥬얼",
+            "Grade": "B",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10006,
+            "JewelName": "빨간쥬얼",
+            "Grade": "A",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10007,
+            "JewelName": "빨간쥬얼",
+            "Grade": "S",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10008,
+            "JewelName": "빨간쥬얼",
+            "Grade": "SS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10009,
+            "JewelName": "빨간쥬얼",
+            "Grade": "SSS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10010,
+            "JewelName": "빨간쥬얼",
+            "Grade": "EX",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_57.sprite"
+        },{
+            "DataId": 10011,
+            "JewelName": "파란쥬얼",
+            "Grade": "F",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },
+        {
+            "DataId": 10012,
+            "JewelName": "파란쥬얼",
+            "Grade": "E",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10013,
+            "JewelName": "파란쥬얼",
+            "Grade": "D",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10014,
+            "JewelName": "파란쥬얼",
+            "Grade": "C",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10015,
+            "JewelName": "파란쥬얼",
+            "Grade": "B",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10016,
+            "JewelName": "파란쥬얼",
+            "Grade": "A",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10017,
+            "JewelName": "파란쥬얼",
+            "Grade": "S",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10018,
+            "JewelName": "파란쥬얼",
+            "Grade": "SS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10019,
+            "JewelName": "파란쥬얼",
+            "Grade": "SSS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10020,
+            "JewelName": "파란쥬얼",
+            "Grade": "EX",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_61.sprite"
+        },{
+            "DataId": 10021,
+            "JewelName": "초록쥬얼",
+            "Grade": "F",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },
+        {
+            "DataId": 10022,
+            "JewelName": "초록쥬얼",
+            "Grade": "E",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10023,
+            "JewelName": "초록쥬얼",
+            "Grade": "D",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10024,
+            "JewelName": "초록쥬얼",
+            "Grade": "C",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10025,
+            "JewelName": "초록쥬얼",
+            "Grade": "B",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10026,
+            "JewelName": "초록쥬얼",
+            "Grade": "A",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10027,
+            "JewelName": "초록쥬얼",
+            "Grade": "S",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10028,
+            "JewelName": "초록쥬얼",
+            "Grade": "SS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10029,
+            "JewelName": "초록쥬얼",
+            "Grade": "SSS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10030,
+            "JewelName": "초록쥬얼",
+            "Grade": "EX",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_63.sprite"
+        },{
+            "DataId": 10031,
+            "JewelName": "노란쥬얼",
+            "Grade": "F",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },
+        {
+            "DataId": 10032,
+            "JewelName": "노란쥬얼",
+            "Grade": "E",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10033,
+            "JewelName": "노란쥬얼",
+            "Grade": "D",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10034,
+            "JewelName": "노란쥬얼",
+            "Grade": "C",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10035,
+            "JewelName": "노란쥬얼",
+            "Grade": "B",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10036,
+            "JewelName": "노란쥬얼",
+            "Grade": "A",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10037,
+            "JewelName": "노란쥬얼",
+            "Grade": "S",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10038,
+            "JewelName": "노란쥬얼",
+            "Grade": "SS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10039,
+            "JewelName": "노란쥬얼",
+            "Grade": "SSS",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        },{
+            "DataId": 10040,
+            "JewelName": "노란쥬얼",
+            "Grade": "EX",
+            "PrefabLabel": "JewelItem",
+            "IconLabel": "icons_59.sprite"
+        }
+    ]
+}

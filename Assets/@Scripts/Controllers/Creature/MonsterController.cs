@@ -31,7 +31,17 @@ public class MonsterController : CreatureController
         DataID = creatureID;
         MonsterData = Managers.Data.MonsterDic[creatureID];
         InitCreatureStat();
-        CreatureSprite.sprite = Managers.Resource.Load<Sprite>(CreatureData.IconLabel);
+        CreatureSprite.sprite = Managers.Resource.Load<Sprite>(MonsterData.IconLabel);
+    }
+
+    public override void InitCreatureStat(bool isFullHp = true)
+    {
+        // TODO 웨이브 별로 체력 증가량 넣기
+        // float waveRate = Managers.Game.CurrentWaveData.HpIncreaseRate;
+
+        MaxHp = MonsterData.MaxHp + (MonsterData.MaxHpBonus /*  * waveRate*/);
+        Hp = MaxHp;
+        MaxHpBonus = MonsterData.MaxHpBonus;
     }
 
 

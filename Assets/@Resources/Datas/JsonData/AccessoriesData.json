@@ -1,0 +1,100 @@
+{
+    "accessories": [
+        {
+            "DataId": 10001,
+            "TitleText": "힘의 반지",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10002,
+            "TitleText": "민첩의 반지",
+            "ItemEffectText": "공격속도",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10003,
+            "TitleText": "속도의 반지",
+            "ItemEffectText": "이동 속도",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10004,
+            "TitleText": "치명타의 반지",
+            "ItemEffectText": "치명타 공격력",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_10.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10005,
+            "TitleText": "치명타 확률의 반지",
+            "ItemEffectText": "치명타 확률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10006,
+            "TitleText": "삥뜯기 반지",
+            "ItemEffectText": "적 사망시 골드 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10007,
+            "TitleText": "자릿세의 반지",
+            "ItemEffectText": "수호비 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabicons_12.spriteel": "",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10008,
+            "TitleText": "마나의 반지",
+            "ItemEffectText": "마나 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10009,
+            "TitleText": "차원의 반지",
+            "ItemEffectText": "차원 에너지 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10010,
+            "TitleText": "루비의 반지",
+            "ItemEffectText": "루비 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10011,
+            "TitleText": "루비의 반지",
+            "ItemEffectText": "루비 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10012,
+            "TitleText": "루비의 반지",
+            "ItemEffectText": "루비 획득률",
+            "PrefabLabel": "NoMaxAccessoriesItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        }
+    ]
+}

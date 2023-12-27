@@ -40,7 +40,7 @@ public class UI_AccessoriesPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_NoMaxAccessoriesItem ai = Managers.UI.MakeSubItem<UI_NoMaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
-            ai.SetInfo(1, _scrollRect);
+            ai.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

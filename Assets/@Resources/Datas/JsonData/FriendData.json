@@ -1,0 +1,101 @@
+{
+    "friends": [
+        {
+            "DataId": 10001,
+            "TitleText": "일반친구 LV.1(MAX50)",
+            "ItemEffectText": "공격력",
+            "MaxLevel": 50,
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10002,
+            "TitleText": "빠른친구 LV.1(MAX50)",
+            "ItemEffectText": "공격 속도",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10003,
+            "TitleText": "일반친구 LV.2(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10004,
+            "TitleText": "일반친구 LV.3(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_10.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10005,
+            "TitleText": "일반친구 LV.4(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10006,
+            "TitleText": "일반친구 LV.5(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10007,
+            "TitleText": "일반친구 LV.6(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabicons_12.spriteel": "",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10008,
+            "TitleText": "일반친구 LV.7(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10009,
+            "TitleText": "일반친구 LV.8(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10010,
+            "TitleText": "일반친구 LV.9(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10011,
+            "TitleText": "일반친구 LV.10(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        },
+        {
+            "DataId": 10012,
+            "TitleText": "일반친구 LV.11(MAX50)",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "FriendItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Ruby"
+        }
+    ]
+}

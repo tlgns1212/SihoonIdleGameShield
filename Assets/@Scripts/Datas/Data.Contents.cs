@@ -69,4 +69,154 @@ namespace Data
         }
     }
     #endregion
+
+    #region AccessoriesData
+    public class AccessoriesData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class AccessoriesDataLoader : ILoader<int, AccessoriesData>
+    {
+        public List<AccessoriesData> accessories = new List<AccessoriesData>();
+        public Dictionary<int, AccessoriesData> MakeDict()
+        {
+            Dictionary<int, AccessoriesData> dict = new Dictionary<int, AccessoriesData>();
+            foreach (AccessoriesData accessory in accessories)
+                dict.Add(accessory.DataID, accessory);
+            return dict;
+        }
+    }
+    #endregion
+    // TODO 여기서부터 ㄱㄱ
+    #region DungeonData
+    public class DungeonData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class DungeonDataLoader : ILoader<int, DungeonData>
+    {
+        public List<DungeonData> dungeons = new List<DungeonData>();
+        public Dictionary<int, DungeonData> MakeDict()
+        {
+            Dictionary<int, DungeonData> dict = new Dictionary<int, DungeonData>();
+            foreach (DungeonData dungeon in dungeons)
+                dict.Add(dungeon.DataID, dungeon);
+            return dict;
+        }
+    }
+    #endregion
+
+    #region FriendData
+    public class FriendData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class FriendDataLoader : ILoader<int, FriendData>
+    {
+        public List<FriendData> friends = new List<FriendData>();
+        public Dictionary<int, FriendData> MakeDict()
+        {
+            Dictionary<int, FriendData> dict = new Dictionary<int, FriendData>();
+            foreach (FriendData friend in friends)
+                dict.Add(friend.DataID, friend);
+            return dict;
+        }
+    }
+    #endregion
+
+    #region JewelData
+    public class JewelData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class JewelDataLoader : ILoader<int, JewelData>
+    {
+        public List<JewelData> jewels = new List<JewelData>();
+        public Dictionary<int, JewelData> MakeDict()
+        {
+            Dictionary<int, JewelData> dict = new Dictionary<int, JewelData>();
+            foreach (JewelData jewel in jewels)
+                dict.Add(jewel.DataID, jewel);
+            return dict;
+        }
+    }
+    #endregion
+
+    #region SaviourData
+    public class SaviourData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class SaviourDataLoader : ILoader<int, SaviourData>
+    {
+        public List<SaviourData> saviours = new List<SaviourData>();
+        public Dictionary<int, SaviourData> MakeDict()
+        {
+            Dictionary<int, SaviourData> dict = new Dictionary<int, SaviourData>();
+            foreach (SaviourData saviour in saviours)
+                dict.Add(saviour.DataID, saviour);
+            return dict;
+        }
+    }
+    #endregion
+
+    #region ShieldData
+    public class ShieldData
+    {
+        public int DataID;
+        public string TitleText;
+        public string PrefabLabel;
+        public string ItemEffectText;
+        public string IconLabel;
+        public string BuyResource;
+    }
+
+    [Serializable]
+    public class ShieldDataLoader : ILoader<int, ShieldData>
+    {
+        public List<ShieldData> shields = new List<ShieldData>();
+        public Dictionary<int, ShieldData> MakeDict()
+        {
+            Dictionary<int, ShieldData> dict = new Dictionary<int, ShieldData>();
+            foreach (ShieldData shield in shields)
+                dict.Add(shield.DataID, shield);
+            return dict;
+        }
+    }
+    #endregion
 }

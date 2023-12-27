@@ -1,0 +1,88 @@
+{
+    "saviour": [
+        {
+            "DataId": 10001,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10002,
+            "TitleText": "성인 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_6.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10003,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10004,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10005,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10006,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10007,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10008,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10009,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10010,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10011,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10012,
+            "TitleText": "아기 구하기",
+            "PrefabLabel": "SaviourItem",
+            "IconLabel": "icons_3.sprite",
+            "BuyResource": "Gold"
+        }
+    ]
+}

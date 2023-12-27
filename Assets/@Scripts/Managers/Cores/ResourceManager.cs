@@ -68,22 +68,44 @@ public class ResourceManager
 
         // 스프라이트
         string loadKey = key;
-        if (key.Contains(".sprite"))
-            loadKey = $"{key}[{key.Replace(".sprite", "")}]";
-
-        var asyncOperation = Addressables.LoadAssetAsync<T>(loadKey);
-        asyncOperation.Completed += (op) =>
+        if (key.Contains(".sprites"))
         {
-            // 캐시 확인.
-            if (_resources.TryGetValue(key, out Object resource))
+            var asyncOperation = Addressables.LoadAssetAsync<IList<T>>(loadKey);
+            asyncOperation.Completed += (op) =>
             {
-                callback?.Invoke(op.Result);
-                return;
-            }
+                // 캐시 확인.
+                foreach (var result in op.Result)
+                {
+                    if (_resources.TryGetValue(key, out Object resource))
+                    {
+                        callback?.Invoke(result);
+                        break;
+                    }
+                    _resources.Add($"{result.name}.sprite", result);
+                    callback?.Invoke(result);
+                }
+            };
+        }
+        else
+        {
+            if (key.Contains(".sprite"))
+                loadKey = $"{key}[{key.Replace(".sprite", "")}]";
 
-            _resources.Add(key, op.Result);
-            callback?.Invoke(op.Result);
-        };
+            var asyncOperation = Addressables.LoadAssetAsync<T>(loadKey);
+
+            asyncOperation.Completed += (op) =>
+            {
+                // 캐시 확인.
+                if (_resources.TryGetValue(key, out Object resource))
+                {
+                    callback?.Invoke(op.Result);
+                    return;
+                }
+
+                _resources.Add(key, op.Result);
+                callback?.Invoke(op.Result);
+            };
+        }
     }
 
 

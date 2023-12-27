@@ -28,6 +28,7 @@ public class GameData
     public ContinueData ContinueInfo = new ContinueData();
     public MoneyBonusData MoneyBonusInfo = new MoneyBonusData();
     public Dictionary<int, int> JewelDictionary = new Dictionary<int, int>(); // <ID, 갯수>
+    public Dictionary<int, LevelData> AccLevelDictionary = new Dictionary<int, LevelData>();
     //TODO EquipDictionary, FriendDictionary, ShieldDictionary, SaviourDicitonary, 
 }
 
@@ -56,6 +57,7 @@ public class ContinueData
     public float KillGoldBonus;
     public float WaitGold;
     public float WaitGoldBonus;
+
 
     public void Clear()
     {
@@ -88,6 +90,12 @@ public class MoneyBonusData
     public float KillManaBonus = 1f;
     public float KillRubyBonus = 1f;
     public float KillDimensionEnergyBonus = 1f;
+}
+[Serializable]
+public class LevelData
+{
+    public bool isOpen = true;
+    public int Level = 0;
 }
 
 public class GameManager
@@ -168,6 +176,11 @@ public class GameManager
     {
         get { return _gameData.JewelDictionary; }
         set { _gameData.JewelDictionary = value; }
+    }
+    public Dictionary<int, LevelData> AccLevelDictionary
+    {
+        get { return _gameData.AccLevelDictionary; }
+        set { _gameData.AccLevelDictionary = value; }
     }
 
 

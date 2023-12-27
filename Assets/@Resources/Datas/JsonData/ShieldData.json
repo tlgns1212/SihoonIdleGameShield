@@ -1,0 +1,100 @@
+{
+    "shields": [
+        {
+            "DataId": 10001,
+            "TitleText": "맨주먹",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10002,
+            "TitleText": "얇은 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10003,
+            "TitleText": "조금 덜 얇은 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10004,
+            "TitleText": "덜 얇은 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_10.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10005,
+            "TitleText": "조금 두꺼운 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10006,
+            "TitleText": "두꺼운 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10007,
+            "TitleText": "장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabicons_12.spriteel": "",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10008,
+            "TitleText": "겨울 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10009,
+            "TitleText": "라이더 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10010,
+            "TitleText": "아픈 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10011,
+            "TitleText": "얇은 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        },
+        {
+            "DataId": 10012,
+            "TitleText": "얇은 장갑",
+            "ItemEffectText": "공격력",
+            "PrefabLabel": "ShieldItem",
+            "IconLabel": "icons_12.sprite",
+            "BuyResource": "Gold"
+        }
+    ]
+}
