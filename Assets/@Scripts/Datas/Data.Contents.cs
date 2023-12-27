@@ -100,8 +100,9 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
+        public string MaxVisitText;
+        public int MaxVisitNum;
         public string PrefabLabel;
-        public string ItemEffectText;
         public string IconLabel;
         public string BuyResource;
     }
@@ -125,8 +126,9 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
-        public string PrefabLabel;
         public string ItemEffectText;
+        public int MaxLevel;
+        public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
     }
@@ -149,11 +151,10 @@ namespace Data
     public class JewelData
     {
         public int DataID;
-        public string TitleText;
+        public string JewelName;
+        public string Grade;
         public string PrefabLabel;
-        public string ItemEffectText;
         public string IconLabel;
-        public string BuyResource;
     }
 
     [Serializable]
@@ -176,7 +177,6 @@ namespace Data
         public int DataID;
         public string TitleText;
         public string PrefabLabel;
-        public string ItemEffectText;
         public string IconLabel;
         public string BuyResource;
     }
@@ -200,8 +200,8 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
-        public string PrefabLabel;
         public string ItemEffectText;
+        public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
     }
