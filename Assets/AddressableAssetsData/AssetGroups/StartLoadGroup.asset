@@ -179,14 +179,44 @@ MonoBehaviour:
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b57cf958e17c61845a9111723fb5307e
-    m_Address: UI_ResourceGet
+  - m_GUID: ca5682a6bbf73a9439f11363c91a6127
+    m_Address: AccessoriesData
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca5682a6bbf73a9439f11363c91a6127
-    m_Address: AccessoriesData
+  - m_GUID: d2256a1607ce47647abf0f55004467fc
+    m_Address: DungeonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d477bc1fd9dee64cabada45039fc1c9
+    m_Address: FriendData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de59b9f0de046be43830c0ec6c7d0770
+    m_Address: JewelData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f799cb3931bc422458b0ceeabb3a543b
+    m_Address: SaviourData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e9a70fbbe05a5043bce3210b305e921
+    m_Address: ShieldData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0383fffbb1cbff04399195e89102b009
+    m_Address: ResourceGet
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

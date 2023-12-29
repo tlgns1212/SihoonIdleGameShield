@@ -52,9 +52,17 @@ public class UI_FriendItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int accesories, ScrollRect scrollRect)
+    public void SetInfo(int friendID, ScrollRect scrollRect)
     {
         _scrollRect = scrollRect;
+        Data.FriendData data = Managers.Data.FriendDic[friendID];
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
+        // TODO 재화 이미지 넣기 (모든 Item)
+        // GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>()
+        // TODO 현재 친구 레벨 하기
+        GetText((int)Texts.TitleText).text = $"{data.TitleText} LV{10} (MAX{data.MaxLevel})";
+        GetText((int)Texts.ATKText).text = data.ItemEffectText;
+        // TODO 재화 얼마나 드는지, 업그레이드 하면 얼마나 증가하는지 그런거 추가
 
         Refresh();
     }

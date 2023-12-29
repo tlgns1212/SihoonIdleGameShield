@@ -54,39 +54,39 @@ public class MonsterController : CreatureController
         float rubyDRate = MonsterData.RubyDropRate;
         if (goldDRate >= 1.0f)
         {
-            Managers.UI.ShowResourceToast("Gold.sprite", (Managers.Game.UserLevel * goldDRate).ToString());
+            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * goldDRate).ToString(), Define.ResourceType.Gold);
         }
         else
         {
             if (UnityEngine.Random.value < goldDRate)
-                Managers.UI.ShowResourceToast("Gold.sprite", Managers.Game.UserLevel.ToString());
+                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Gold);
         }
         if (manaDRate >= 1.0f)
         {
-            Managers.UI.ShowResourceToast("Mana.sprite", (Managers.Game.UserLevel * manaDRate).ToString());
+            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * manaDRate).ToString(), Define.ResourceType.Mana);
         }
         else
         {
             if (UnityEngine.Random.value < manaDRate)
-                Managers.UI.ShowResourceToast("Mana.sprite", Managers.Game.UserLevel.ToString());
+                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Mana);
         }
         if (dimensionEnergyDRate >= 1.0f)
         {
-            Managers.UI.ShowResourceToast("DimensionEnergy.sprite", (Managers.Game.UserLevel * dimensionEnergyDRate).ToString());
+            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * dimensionEnergyDRate).ToString(), Define.ResourceType.DimensionEnergy);
         }
         else
         {
             if (UnityEngine.Random.value < dimensionEnergyDRate)
-                Managers.UI.ShowResourceToast("DimensionEnergy.sprite", Managers.Game.UserLevel.ToString());
+                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.DimensionEnergy);
         }
         if (rubyDRate >= 1.0f)
         {
-            Managers.UI.ShowResourceToast("Ruby.sprite", (Managers.Game.UserLevel * rubyDRate).ToString());
+            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * rubyDRate).ToString(), Define.ResourceType.Ruby);
         }
         else
         {
             if (UnityEngine.Random.value < rubyDRate)
-                Managers.UI.ShowResourceToast("Ruby.sprite", Managers.Game.UserLevel.ToString());
+                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Ruby);
         }
     }
 }

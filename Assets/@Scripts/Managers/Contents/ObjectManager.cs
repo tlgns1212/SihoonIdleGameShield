@@ -50,6 +50,16 @@ public class ObjectManager
         DamageFont damageText = go.GetOrAddComponent<DamageFont>();
         damageText.SetInfo(pos, damage, parent, isCritical);
     }
+    public void ShowResourceFont(Vector2 pos, Transform parent, string amount, Define.ResourceType resourceType = Define.ResourceType.Gold)
+    {
+        string prefabName;
+        prefabName = "ResourceGet";
+
+        GameObject go = Managers.Resource.Instantiate(prefabName, pooling: true);
+
+        ResourceGet resourceGet = go.GetOrAddComponent<ResourceGet>();
+        resourceGet.SetInfo(pos, parent, resourceType, amount);
+    }
 
     public T Spawn<T>(Vector3 position, int templateID = 0, string prefabName = "") where T : BaseController
     {

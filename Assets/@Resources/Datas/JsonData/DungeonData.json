@@ -5,6 +5,7 @@
             "TitleText": "던전 브레이크",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 0,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_47.sprite",
             "BuyResource": "Ruby"
@@ -14,6 +15,7 @@
             "TitleText": "보스 레이드",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 0,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_49.sprite",
             "BuyResource": "Ruby"
@@ -23,87 +25,97 @@
             "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10004,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10005,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10006,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10007,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10008,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10009,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10010,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10011,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
         },
         {
             "DataId": 10012,
-           "TitleText": "결투장",
+            "TitleText": "결투장",
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
+            "LockOpenLevel": 10,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"

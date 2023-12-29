@@ -40,7 +40,7 @@ public class UI_DungeonPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_DungeonItem di = Managers.UI.MakeSubItem<UI_DungeonItem>(GetObject((int)GameObjects.DungeonItem).transform);
-            di.SetInfo(2, _scrollRect);
+            di.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

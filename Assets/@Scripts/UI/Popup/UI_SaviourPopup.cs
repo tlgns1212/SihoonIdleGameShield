@@ -40,7 +40,7 @@ public class UI_SaviourPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_SaviourItem si = Managers.UI.MakeSubItem<UI_SaviourItem>(GetObject((int)GameObjects.SaviourItem).transform);
-            si.SetInfo(3, _scrollRect);
+            si.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

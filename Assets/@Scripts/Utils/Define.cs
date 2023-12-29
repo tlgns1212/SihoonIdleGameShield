@@ -56,6 +56,20 @@ public class Define
         F
     }
 
+    public enum AccessoriesType
+    {
+        NoMaxAccessoriesItem,
+        MaxAccessoriesItem
+    }
+
+    public enum ResourceType
+    {
+        Gold,
+        Mana,
+        DimensionEnergy,
+        Ruby
+    }
+
     public enum UIEvent
     {
         Click,

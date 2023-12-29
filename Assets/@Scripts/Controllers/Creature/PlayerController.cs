@@ -183,7 +183,7 @@ public class PlayerController : CreatureController
     {
         if (_targetMC.IsValid())
         {
-            _targetMC.OnDamaged(this, 15);
+            _targetMC.OnDamaged(this, 200);
         }
         yield return null;
 

@@ -44,10 +44,10 @@ public class UI_JewelPopup : UI_Popup
         GetObject((int)GameObjects.JewelTab).BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
         GetObject((int)GameObjects.JewelTab).BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 40; i++)
         {
             UI_JewelItem ji = Managers.UI.MakeSubItem<UI_JewelItem>(GetObject((int)GameObjects.JewelContent).transform);
-            ji.SetInfo(4, _scrollRect);
+            ji.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

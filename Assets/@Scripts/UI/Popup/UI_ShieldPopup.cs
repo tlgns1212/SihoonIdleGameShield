@@ -40,7 +40,7 @@ public class UI_ShieldPopup : UI_Popup
         for (int i = 0; i < 10; i++)
         {
             UI_ShieldItem si = Managers.UI.MakeSubItem<UI_ShieldItem>(GetObject((int)GameObjects.ShieldItem).transform);
-            si.SetInfo(4, _scrollRect);
+            si.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

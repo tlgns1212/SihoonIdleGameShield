@@ -6,7 +6,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10002,
@@ -14,7 +16,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10003,
@@ -22,7 +26,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10004,
@@ -30,7 +36,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_10.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10005,
@@ -38,7 +46,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10006,
@@ -46,15 +56,19 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10007,
             "TitleText": "장갑",
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
-            "IconLabicons_12.spriteel": "",
-            "BuyResource": "Gold"
+            "IconLabel": "icons_14.sprite",
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10008,
@@ -62,7 +76,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10009,
@@ -70,7 +86,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10010,
@@ -78,7 +96,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10011,
@@ -86,7 +106,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10012,
@@ -94,7 +116,9 @@
             "ItemEffectText": "공격력",
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold"
+            "BuyResource": "Gold",
+            "LevelDatas": [],
+            "RaiseLevelDatas":[]
         }
     ]
 }

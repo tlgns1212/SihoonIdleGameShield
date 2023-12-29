@@ -96,6 +96,7 @@ public class LevelData
 {
     public bool isOpen = true;
     public int Level = 0;
+    public int Value = 0;
 }
 
 public class GameManager

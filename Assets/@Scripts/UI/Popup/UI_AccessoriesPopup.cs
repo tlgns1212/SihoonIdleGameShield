@@ -39,8 +39,19 @@ public class UI_AccessoriesPopup : UI_Popup
 
         for (int i = 0; i < 12; i++)
         {
-            UI_NoMaxAccessoriesItem ai = Managers.UI.MakeSubItem<UI_NoMaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
-            ai.SetInfo(10001 + i, _scrollRect);
+
+            switch (Util.ParseEnum<Define.AccessoriesType>(Managers.Data.AccessoriesDic[10001 + i].PrefabLabel))
+            {
+                case Define.AccessoriesType.NoMaxAccessoriesItem:
+                    UI_NoMaxAccessoriesItem ani = Managers.UI.MakeSubItem<UI_NoMaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
+                    ani.SetInfo(10001 + i, _scrollRect);
+                    break;
+                case Define.AccessoriesType.MaxAccessoriesItem:
+                    UI_MaxAccessoriesItem ai = Managers.UI.MakeSubItem<UI_MaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
+                    ai.SetInfo(10001 + i, _scrollRect);
+                    break;
+            }
+
         }
 
         return true;

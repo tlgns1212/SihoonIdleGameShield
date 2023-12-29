@@ -34,9 +34,14 @@ public class UI_JewelItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int accesories, ScrollRect scrollRect)
+    public void SetInfo(int jewelID, ScrollRect scrollRect)
     {
         _scrollRect = scrollRect;
+        Data.JewelData data = Managers.Data.JewelDic[jewelID];
+
+        GetImage((int)Images.JewelImage).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
+        // TODO Grade 메기기
+        // GetImage((int)Images.GradeImage).sprite =
 
         Refresh();
     }

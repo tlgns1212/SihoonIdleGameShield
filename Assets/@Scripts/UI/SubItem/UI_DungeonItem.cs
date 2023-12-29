@@ -48,9 +48,21 @@ public class UI_DungeonItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int accesories, ScrollRect scrollRect)
+    public void SetInfo(int dungeonID, ScrollRect scrollRect)
     {
         _scrollRect = scrollRect;
+        Data.DungeonData data = Managers.Data.DungeonDic[dungeonID];
+
+        GetText((int)Texts.TitleText).text = data.TitleText;
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
+        GetText((int)Texts.VisitedText).text = data.MaxVisitText;
+        // TODO : 현재 출입 횟수 지정하기
+        GetText((int)Texts.VisitedLeftText).text = $"10/{data.MaxVisitNum}";
+
+        if (data.LockOpenLevel <= Managers.Game.UserLevel)
+        {
+            // TODO 잠금 풀기(지금 잠금이 없음 만들어야 함)
+        }
 
         Refresh();
     }

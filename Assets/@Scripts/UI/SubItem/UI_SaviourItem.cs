@@ -53,9 +53,19 @@ public class UI_SaviourItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int accesories, ScrollRect scrollRect)
+    public void SetInfo(int saviourID, ScrollRect scrollRect)
     {
         _scrollRect = scrollRect;
+        Data.SaviourData data = Managers.Data.SaviourDic[saviourID];
+
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
+        GetText((int)Texts.TitleText).text = data.TitleText;
+        // TODO LV + ExtraLV
+        GetText((int)Texts.LvText).text = $"LV. {10000}";
+        GetText((int)Texts.ExtraLvText).text = $"[+{10}LV]";
+
+        // TODO PRogressBar
+
 
         Refresh();
     }

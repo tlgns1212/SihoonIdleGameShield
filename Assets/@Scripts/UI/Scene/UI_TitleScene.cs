@@ -61,6 +61,12 @@ public class UI_StartScene : UI_Scene
             if (count == totalCount)
             {
                 Managers.Data.Init();
+
+                // var result = Managers.Resource.gogogogo();
+                // foreach (var res in result)
+                // {
+                //     print(res);
+                // }
                 Managers.Game.LoadGame();
                 GetButton((int)Buttons.StartButton).gameObject.SetActive(true);
                 StartTextAnimation();

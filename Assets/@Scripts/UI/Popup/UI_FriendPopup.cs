@@ -40,7 +40,7 @@ public class UI_FriendPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_FriendItem ai = Managers.UI.MakeSubItem<UI_FriendItem>(GetObject((int)GameObjects.FriendItem).transform);
-            ai.SetInfo(3, _scrollRect);
+            ai.SetInfo(10001 + i, _scrollRect);
         }
 
         return true;

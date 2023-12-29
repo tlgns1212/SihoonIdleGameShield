@@ -78,12 +78,11 @@ public class ResourceManager
                 {
                     if (_resources.TryGetValue(key, out Object resource))
                     {
-                        callback?.Invoke(result);
                         break;
                     }
                     _resources.Add($"{result.name}.sprite", result);
-                    callback?.Invoke(result);
                 }
+                callback?.Invoke(op.Result[op.Result.Count - 1]);
             };
         }
         else
@@ -138,6 +137,16 @@ public class ResourceManager
 
             }
         };
+    }
+
+    public List<string> gogogogo()
+    {
+        List<string> result = new List<string>();
+        foreach (string key in _resources.Keys)
+        {
+            result.Add(key);
+        }
+        return result;
     }
     #endregion
 }

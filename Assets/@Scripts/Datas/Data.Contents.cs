@@ -70,6 +70,15 @@ namespace Data
     }
     #endregion
 
+    #region LevelData
+    public class LevelData
+    {
+        public int Level;
+        public int LValue;
+        public int NextCost;
+    }
+    #endregion
+
     #region AccessoriesData
     public class AccessoriesData
     {
@@ -77,8 +86,11 @@ namespace Data
         public string TitleText;
         public string PrefabLabel;
         public string ItemEffectText;
+        public string ItemEffectNumText;
         public string IconLabel;
         public string BuyResource;
+        public List<LevelData> LevelDatas = new List<LevelData>();
+        public List<LevelData> RaiseLevelDatas = new List<LevelData>();
     }
 
     [Serializable]
@@ -94,7 +106,7 @@ namespace Data
         }
     }
     #endregion
-    // TODO 여기서부터 ㄱㄱ
+
     #region DungeonData
     public class DungeonData
     {
@@ -102,6 +114,7 @@ namespace Data
         public string TitleText;
         public string MaxVisitText;
         public int MaxVisitNum;
+        public int LockOpenLevel;
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
@@ -131,6 +144,7 @@ namespace Data
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
+        public List<LevelData> LevelDatas = new List<LevelData>();
     }
 
     [Serializable]
@@ -179,6 +193,8 @@ namespace Data
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
+        public List<LevelData> LevelDatas = new List<LevelData>();
+        public List<LevelData> RaiseLevelDatas = new List<LevelData>();
     }
 
     [Serializable]
@@ -204,6 +220,8 @@ namespace Data
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
+        public List<LevelData> LevelDatas = new List<LevelData>();
+        public List<LevelData> RaiseLevelDatas = new List<LevelData>();
     }
 
     [Serializable]

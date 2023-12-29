@@ -50,9 +50,15 @@ public class UI_ShieldItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int accesories, ScrollRect scrollRect)
+    public void SetInfo(int shieldID, ScrollRect scrollRect)
     {
         _scrollRect = scrollRect;
+        Data.ShieldData data = Managers.Data.ShieldDic[shieldID];
+        GetText((int)Texts.TitleText).text = data.TitleText;
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
+        GetText((int)Texts.ATKText).text = data.ItemEffectText;
+        // TODO 수치 입력하기
+        GetText((int)Texts.ATKStatText).text = "100.0A";
 
         Refresh();
     }
