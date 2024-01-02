@@ -138,21 +138,23 @@ public class UI_MaxAccessoriesItem : UI_Base
         switch (itemType)
         {
             case Define.AccessoriesItemType.AtkRate:
-                Managers.Game.Player.AtkRate = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccAtkRate = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.Player.ChangeAnimSpeed();
                 break;
             case Define.AccessoriesItemType.CriticalRate:
-                Managers.Game.ContinueInfo.CriRate = _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccCriRate = _accessoriesGameData.LValue / 100.0f;
                 print(Managers.Game.ContinueInfo.CriRate);
                 break;
             case Define.AccessoriesItemType.MoveSpeed:
-                Managers.Game.Player.MoveSpeed = _accessoriesGameData.LValue;
+                Managers.Game.ContinueInfo.AccMoveSpeed = _accessoriesGameData.LValue;
+                Managers.Game.Player.ChangeAnimSpeed();
                 break;
                 // TODO 할인율 이거 일단 놨뒀음 나중에 할것!
             case Define.AccessoriesItemType.SaveSaleRate:
-                Managers.Game.ContinueInfo.SaveSale = _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccSaveSale = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.ShieldSaleRate:
-                Managers.Game.ContinueInfo.ShieldSale = _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccShieldSale = _accessoriesGameData.LValue / 100.0f;
                 break;
         }
     }

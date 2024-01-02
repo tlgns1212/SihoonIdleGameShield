@@ -53,22 +53,22 @@ public class PlayerController : CreatureController
     public float MoveSpeed
     {
         get { return Managers.Game.ContinueInfo.MoveSpeed; }
-        set { Managers.Game.ContinueInfo.MoveSpeed = StatViewer.MoveSpeed = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
+        //set { Managers.Game.ContinueInfo.MoveSpeed = StatViewer.MoveSpeed = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
     }
     public float AtkRate
     {
         get { return Managers.Game.ContinueInfo.AtkRate; }
-        set { Managers.Game.ContinueInfo.AtkRate = StatViewer.AtkRate = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
+        //set { Managers.Game.ContinueInfo.AtkRate = StatViewer.AtkRate = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
     }
     public float CriRate
     {
         get { return Managers.Game.ContinueInfo.CriRate; }
-        set { Managers.Game.ContinueInfo.CriRate = StatViewer.CriRate = value; Managers.Game.SaveGame(); }
+        //set { Managers.Game.ContinueInfo.CriRate = StatViewer.CriRate = value; Managers.Game.SaveGame(); }
     }
     public float CriDamage
     {
         get { return Managers.Game.ContinueInfo.CriDamage; }
-        set { Managers.Game.ContinueInfo.CriDamage = StatViewer.CriDamage = value; Managers.Game.SaveGame(); }
+        //set { Managers.Game.ContinueInfo.CriDamage = StatViewer.CriDamage = value; Managers.Game.SaveGame(); }
     }
 
     [SerializeField]
@@ -118,7 +118,7 @@ public class PlayerController : CreatureController
         _rigidBody.AddForce(moveVel, ForceMode2D.Force);
     }
 
-    void ChangeAnimSpeed()
+    public void ChangeAnimSpeed()
     {
         if (CreatureState == Define.CreatureState.Attacking)
             Anim.speed = AtkRate;
@@ -162,7 +162,7 @@ public class PlayerController : CreatureController
     {
         if (_targetMC.IsValid())
         {
-            _targetMC.OnDamage(this, Atk);
+            _targetMC.OnDamaged(this, Atk);
         }
         yield return null;
     }

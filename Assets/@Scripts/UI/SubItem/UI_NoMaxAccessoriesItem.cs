@@ -116,22 +116,22 @@ public class UI_NoMaxAccessoriesItem : UI_Base
                 Managers.Game.ContinueInfo.AccAtk = _accessoriesGameData.LValue;
                 break;
             case Define.AccessoriesItemType.CriticalDamage:
-                Managers.Game.ContinueInfo.CriDamage = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccCriDamage = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.KillGoldRate:
-                Managers.Game.ContinueInfo.KillGold = _accessoriesGameData.LValue;
+                Managers.Game.ContinueInfo.AccKillGold = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.SaveGoldRate:
-                Managers.Game.ContinueInfo.WaitGold = _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccWaitGold = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.ManaGetRate:
-                Managers.Game.ContinueInfo.ManaGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccManaGetRate = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.DEnergyGetRate:
-                Managers.Game.ContinueInfo.DEnergyGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccDEnergyGetRate = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.RubyGetRate:
-                Managers.Game.ContinueInfo.RubyGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
+                Managers.Game.ContinueInfo.AccRubyGetRate = _accessoriesGameData.LValue / 100.0f;
                 break;
         }
     }

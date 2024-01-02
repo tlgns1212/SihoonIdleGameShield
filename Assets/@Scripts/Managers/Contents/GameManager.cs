@@ -41,23 +41,34 @@ public class ContinueData
     public bool IsContinue { get { return PlayerDataID != 0; } }
     public float Hp;
     public float MaxHp;
-    public float Atk { get { return ShiAtk + AccAtk; } }
+    public float Atk { get { return 1 + ShiAtk + AccAtk; } }
     public float ShiAtk;
     public float AccAtk;
-    public float MoveSpeed;
-    public float AtkRate;
-    public float CriDamage;
-    public float CriRate;
+    public float MoveSpeed { get { return AccMoveSpeed; } }
+    public float AccMoveSpeed;
+    public float AtkRate { get { return 1 + AccAtkRate; } }
+    public float AccAtkRate;
+    public float CriDamage{ get { return AccCriDamage; } }
+    public float AccCriDamage;
+    public float CriRate { get { return AccCriRate; } }
+    public float AccCriRate;
     public int Level;
     public float Exp;
     public float TotalExp;
-    public float KillGold;
-    public float WaitGold;
-    public float SaveSale;
-    public float ShieldSale;
-    public float ManaGetRate;
-    public float DEnergyGetRate;
-    public float RubyGetRate;
+    public float KillGold { get { return 1 + AccKillGold; } }
+    public float AccKillGold;
+    public float WaitGold{ get { return 1 + AccWaitGold; } }
+    public float AccWaitGold;
+    public float SaveSale { get { return AccSaveSale; } }
+    public float AccSaveSale;
+    public float ShieldSale { get { return AccShieldSale; } }
+    public float AccShieldSale;
+    public float ManaGetRate { get { return 1 + AccManaGetRate; } }
+    public float AccManaGetRate;
+    public float DEnergyGetRate { get { return 1 + AccDEnergyGetRate; } }
+    public float AccDEnergyGetRate;
+    public float RubyGetRate { get { return 1 + AccRubyGetRate; } }
+    public float AccRubyGetRate;
 
 
     public void Clear()
@@ -67,20 +78,20 @@ public class ContinueData
         MaxHp = 0f;
         ShiAtk = 1f;
         AccAtk = 0f;
-        MoveSpeed = 0f;
-        AtkRate = 1f;
-        CriDamage = 1f;
-        CriRate = 0f;
+        AccMoveSpeed = 0f;
+        AccAtkRate = 1f;
+        AccCriDamage = 1f;
+        AccCriRate = 0f;
         Level = 1;
         Exp = 0f;
         TotalExp = 0f;
-        KillGold = 1f;
-        WaitGold = 0f;
-        SaveSale = 0f;
-        ShieldSale = 0f;
-        ManaGetRate = 1f;
-        DEnergyGetRate = 1f;
-        RubyGetRate = 1f;
+        AccKillGold = 1f;
+        AccWaitGold = 0f;
+        AccSaveSale = 0f;
+        AccShieldSale = 0f;
+        AccManaGetRate = 1f;
+        AccDEnergyGetRate = 1f;
+        AccRubyGetRate = 1f;
     }
 }
 [Serializable]
