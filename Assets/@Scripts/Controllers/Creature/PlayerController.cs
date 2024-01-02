@@ -53,12 +53,12 @@ public class PlayerController : CreatureController
     public float MoveSpeed
     {
         get { return Managers.Game.ContinueInfo.MoveSpeed; }
-        set { Managers.Game.ContinueInfo.MoveSpeed = StatViewer.MoveSpeed = value; Managers.Game.SaveGame(); }
+        set { Managers.Game.ContinueInfo.MoveSpeed = StatViewer.MoveSpeed = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
     }
     public float AtkRate
     {
         get { return Managers.Game.ContinueInfo.AtkRate; }
-        set { Managers.Game.ContinueInfo.AtkRate = StatViewer.AtkRate = value; Managers.Game.SaveGame(); }
+        set { Managers.Game.ContinueInfo.AtkRate = StatViewer.AtkRate = value; ChangeAnimSpeed(); Managers.Game.SaveGame(); }
     }
     public float CriRate
     {
@@ -113,15 +113,23 @@ public class PlayerController : CreatureController
     protected override void UpdateMoving()
     {
         ShouldAttack = false;
-        Anim.speed = MoveSpeed <= 0 ? 1 : MoveSpeed;
         Vector2 moveVel = Vector2.right * (BaseSpeed + MoveSpeed);
+        ChangeAnimSpeed();
         _rigidBody.AddForce(moveVel, ForceMode2D.Force);
+    }
+
+    void ChangeAnimSpeed()
+    {
+        if (CreatureState == Define.CreatureState.Attacking)
+            Anim.speed = AtkRate;
+        else if (CreatureState == Define.CreatureState.Attacking)
+            Anim.speed = MoveSpeed <= 0 ? 1 : Mathf.Min(MoveSpeed / 3, 5);
     }
 
     protected override void UpdateAttacking()
     {
         ShouldAttack = true;
-        Anim.speed = AtkRate;
+        ChangeAnimSpeed();
         _rigidBody.velocity = Vector2.zero;
     }
 
@@ -154,8 +162,15 @@ public class PlayerController : CreatureController
     {
         if (_targetMC.IsValid())
         {
-            _targetMC.OnDamaged(this, Atk);
+            _targetMC.OnDamage(this, Atk);
         }
         yield return null;
     }
 }
+
+
+
+
+
+
+

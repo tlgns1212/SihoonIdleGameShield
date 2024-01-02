@@ -59,7 +59,7 @@ public class MonsterController : CreatureController
         float gotRuby = 0;
         if (goldDRate >= 1.0f)
         {
-            gotGold = Managers.Game.UserLevel * goldDRate;
+            gotGold = Managers.Game.UserLevel * goldDRate * Managers.Game.ContinueInfo.KillGold;
             Managers.Object.ShowResourceFont(CenterPosition, transform, gotGold.ToString(), Define.ResourceType.Gold);
             Managers.Game.Gold += (int)gotGold;
         }
@@ -67,14 +67,14 @@ public class MonsterController : CreatureController
         {
             if (UnityEngine.Random.value < goldDRate)
             {
-                gotGold = Managers.Game.UserLevel;
+                gotGold = Managers.Game.UserLevel * Managers.Game.ContinueInfo.KillGold;
                 Managers.Object.ShowResourceFont(CenterPosition, transform, gotGold.ToString(), Define.ResourceType.Gold);
                 Managers.Game.Gold += (int)gotGold;
             }
         }
         if (manaDRate >= 1.0f)
         {
-            gotMana = Managers.Game.UserLevel * manaDRate;
+            gotMana = Managers.Game.UserLevel * manaDRate * Managers.Game.ContinueInfo.ManaGetRate;
             Managers.Object.ShowResourceFont(CenterPosition, transform, gotMana.ToString(), Define.ResourceType.Mana);
             Managers.Game.Mana += (int)gotMana;
         }
@@ -82,7 +82,7 @@ public class MonsterController : CreatureController
         {
             if (UnityEngine.Random.value < manaDRate)
             {
-                gotMana = Managers.Game.UserLevel;
+                gotMana = Managers.Game.UserLevel * Managers.Game.ContinueInfo.ManaGetRate;
                 Managers.Object.ShowResourceFont(CenterPosition, transform, gotMana.ToString(), Define.ResourceType.Mana);
                 Managers.Game.Mana += (int)gotMana;
             }
@@ -90,7 +90,7 @@ public class MonsterController : CreatureController
         }
         if (dimensionEnergyDRate >= 1.0f)
         {
-            gotDEnergy = Managers.Game.UserLevel * dimensionEnergyDRate;
+            gotDEnergy = Managers.Game.UserLevel * dimensionEnergyDRate * Managers.Game.ContinueInfo.DEnergyGetRate;
             Managers.Object.ShowResourceFont(CenterPosition, transform, gotDEnergy.ToString(), Define.ResourceType.DimensionEnergy);
             Managers.Game.DimensionEnergy += (int)gotDEnergy;
         }
@@ -98,7 +98,7 @@ public class MonsterController : CreatureController
         {
             if (UnityEngine.Random.value < dimensionEnergyDRate)
             {
-                gotDEnergy = Managers.Game.UserLevel;
+                gotDEnergy = Managers.Game.UserLevel * Managers.Game.ContinueInfo.DEnergyGetRate;
                 Managers.Object.ShowResourceFont(CenterPosition, transform, gotDEnergy.ToString(), Define.ResourceType.DimensionEnergy);
                 Managers.Game.DimensionEnergy += (int)gotDEnergy;
             }
@@ -106,7 +106,7 @@ public class MonsterController : CreatureController
         }
         if (rubyDRate >= 1.0f)
         {
-            gotRuby = Managers.Game.UserLevel * rubyDRate;
+            gotRuby = Managers.Game.UserLevel * rubyDRate * Managers.Game.ContinueInfo.RubyGetRate;
             Managers.Object.ShowResourceFont(CenterPosition, transform, gotRuby.ToString(), Define.ResourceType.Ruby);
             Managers.Game.Ruby += (int)gotRuby;
         }
@@ -114,7 +114,7 @@ public class MonsterController : CreatureController
         {
             if (UnityEngine.Random.value < rubyDRate)
             {
-                gotRuby = Managers.Game.UserLevel;
+                gotRuby = Managers.Game.UserLevel * Managers.Game.ContinueInfo.RubyGetRate;
                 Managers.Object.ShowResourceFont(CenterPosition, transform, gotRuby.ToString(), Define.ResourceType.Ruby);
                 Managers.Game.Ruby += (int)gotRuby;
             }

@@ -113,7 +113,7 @@ public class UI_SaviourItem : UI_Base
         if (percentage >= 1)
         {
             _lastRewardTime = 0;
-            Managers.Game.Gold += _saviourGameData.LValue;
+            Managers.Game.Gold += (int)(_saviourGameData.LValue * Managers.Game.ContinueInfo.WaitGold);
         }
 
         GetImage((int)Images.ProgressBarFill).fillAmount = percentage;

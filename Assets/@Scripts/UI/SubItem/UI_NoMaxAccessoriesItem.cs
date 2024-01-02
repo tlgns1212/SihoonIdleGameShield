@@ -116,22 +116,22 @@ public class UI_NoMaxAccessoriesItem : UI_Base
                 Managers.Game.ContinueInfo.AccAtk = _accessoriesGameData.LValue;
                 break;
             case Define.AccessoriesItemType.CriticalDamage:
-                Managers.Game.ContinueInfo.CriDamage = 1 + _accessoriesGameData.LValue / 100;
+                Managers.Game.ContinueInfo.CriDamage = 1 + _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.KillGoldRate:
                 Managers.Game.ContinueInfo.KillGold = _accessoriesGameData.LValue;
                 break;
             case Define.AccessoriesItemType.SaveGoldRate:
-                Managers.Game.ContinueInfo.WaitGold = _accessoriesGameData.LValue / 100;
+                Managers.Game.ContinueInfo.WaitGold = _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.ManaGetRate:
-                Managers.Game.ContinueInfo.ManaGetRate = 1 + _accessoriesGameData.LValue / 100;
+                Managers.Game.ContinueInfo.ManaGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.DEnergyGetRate:
-                Managers.Game.ContinueInfo.DEnergyGetRate = 1 + _accessoriesGameData.LValue / 100;
+                Managers.Game.ContinueInfo.DEnergyGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
                 break;
             case Define.AccessoriesItemType.RubyGetRate:
-                Managers.Game.ContinueInfo.RubyGetRate = 1 + _accessoriesGameData.LValue / 100;
+                Managers.Game.ContinueInfo.RubyGetRate = 1 + _accessoriesGameData.LValue / 100.0f;
                 break;
         }
     }
@@ -170,7 +170,7 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         }
     }
 
-    int GetLValue()
+    int GetLValue() 
     {
         return _data.RaiseLevelDatas[_levelIndex].LValue;
     }
