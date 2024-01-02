@@ -104,8 +104,6 @@ public class UI_ShieldItem : UI_Base
         }
 
         GetText((int)Texts.TitleText).text = _data.TitleText;
-        // TODO 수치 입력하기
-
         GetText((int)Texts.ATKStatText).text = _data.LevelDatas[_level].LValue.ToString(); ;
 
         if (_level == _totalLevel)

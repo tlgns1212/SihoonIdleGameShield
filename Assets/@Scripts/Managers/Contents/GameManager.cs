@@ -32,7 +32,6 @@ public class GameData
     public Dictionary<int, SaviourGameData> SaviourLevelDictionary = new Dictionary<int, SaviourGameData>();
     public Dictionary<int, AccessoriesGameData> AccessoriesLevelDictionary = new Dictionary<int, AccessoriesGameData>();
     public Dictionary<int, FriendGameData> FriendLevelDictionary = new Dictionary<int, FriendGameData>();
-    //TODO EquipDictionary, FriendDictionary, ShieldDictionary, SaviourDicitonary, 
 }
 
 [Serializable]
@@ -309,9 +308,6 @@ public class GameManager
     public bool LoadGame()
     {
         _path = Application.persistentDataPath + "/" + UserName + ".json";
-
-        // TODO TEmp Clear
-        // _gameData.ContinueInfo.Clear();
 
         if (File.Exists(_path) == false)
         {

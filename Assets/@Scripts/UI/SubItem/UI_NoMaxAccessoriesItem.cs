@@ -94,7 +94,6 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         _accessoriesGameData.BuyGold += GetCost();
         _accessoriesGameData.Level += levelPlus;
 
-        // TODO Define.Accessories 특성 하나 만들어서 Strength면 힘, MoveSpeed면 이동속도 증가하게 만들기, 등...
         Refresh();
     }
 

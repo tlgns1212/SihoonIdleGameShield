@@ -88,10 +88,6 @@ public class UI_MaxAccessoriesItem : UI_Base
             GetButton((int)Buttons.LockButton).gameObject.SetActive(false);
         }
 
-        // TODO 레벨에 맞게 구매 비용, 증가하는 공격력 등 해줘야 함.
-
-        // GetText((int)Texts.PlusNumText).text =
-
         Refresh();
     }
 
@@ -133,7 +129,6 @@ public class UI_MaxAccessoriesItem : UI_Base
         _accessoriesGameData.BuyGold = GetCost();
         _accessoriesGameData.Level += levelPlus;
 
-        // TODO Define.Accessories 특성 하나 만들어서 Strength면 힘, MoveSpeed면 이동속도 증가하게 만들기, 등...
         Refresh();
     }
 
