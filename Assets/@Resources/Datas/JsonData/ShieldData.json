@@ -7,8 +7,39 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 1,
+                    "NextCost": 3
+                },
+                {
+                    "Level": 1,
+                    "LValue": 3,
+                    "NextCost": 6
+                },
+                {
+                    "Level": 2,
+                    "LValue": 6,
+                    "NextCost": 9
+                },
+                {
+                    "Level": 3,
+                    "LValue": 10,
+                    "NextCost": 12
+                },
+                {
+                    "Level": 4,
+                    "LValue": 15,
+                    "NextCost": 15
+                },
+                {
+                    "Level": 5,
+                    "LValue": 21  ,
+                    "NextCost": 18
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10002,
@@ -17,8 +48,39 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_14.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 7,
+                    "NextCost": 21
+                },
+                {
+                    "Level": 1,
+                    "LValue": 8,
+                    "NextCost": 24
+                },
+                {
+                    "Level": 2,
+                    "LValue": 9,
+                    "NextCost": 27
+                },
+                {
+                    "Level": 3,
+                    "LValue": 10,
+                    "NextCost": 30
+                },
+                {
+                    "Level": 4,
+                    "LValue": 11,
+                    "NextCost": 33
+                },
+                {
+                    "Level": 5,
+                    "LValue": 12,
+                    "NextCost": 36
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10003,
@@ -27,8 +89,39 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                },
+                {
+                    "Level": 1,
+                    "LValue": 14,
+                    "NextCost": 42
+                },
+                {
+                    "Level": 2,
+                    "LValue": 15,
+                    "NextCost": 45
+                },
+                {
+                    "Level": 3,
+                    "LValue": 16,
+                    "NextCost": 48
+                },
+                {
+                    "Level": 4,
+                    "LValue": 17,
+                    "NextCost": 51
+                },
+                {
+                    "Level": 5,
+                    "LValue": 18,
+                    "NextCost": 54
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10004,
@@ -37,8 +130,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_10.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10005,
@@ -47,8 +146,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10006,
@@ -57,8 +162,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_14.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10007,
@@ -67,8 +178,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_14.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10008,
@@ -77,8 +194,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10009,
@@ -87,8 +210,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10010,
@@ -97,8 +226,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10011,
@@ -107,8 +242,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         },
         {
             "DataId": 10012,
@@ -117,8 +258,14 @@
             "PrefabLabel": "ShieldItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "LevelDatas": [
+                {
+                    "Level": 0,
+                    "LValue": 13,
+                    "NextCost": 39
+                }
+            ],
+            "RaiseLevelDatas": []
         }
     ]
 }

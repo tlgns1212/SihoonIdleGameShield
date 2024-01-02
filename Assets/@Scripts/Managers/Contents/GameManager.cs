@@ -29,6 +29,7 @@ public class GameData
     public MoneyBonusData MoneyBonusInfo = new MoneyBonusData();
     public Dictionary<int, int> JewelDictionary = new Dictionary<int, int>(); // <ID, 갯수>
     public Dictionary<int, LevelData> AccLevelDictionary = new Dictionary<int, LevelData>();
+    public Dictionary<int, ShieldData> ShieldLevelDictionary = new Dictionary<int, ShieldData>();
     //TODO EquipDictionary, FriendDictionary, ShieldDictionary, SaviourDicitonary, 
 }
 
@@ -98,6 +99,13 @@ public class LevelData
     public int Level = 0;
     public int Value = 0;
 }
+[Serializable]
+public class ShieldData
+{
+    public int Level = 0;
+    public bool isCompleted = false;
+    public bool isLocked = false;
+}
 
 public class GameManager
 {
@@ -119,6 +127,7 @@ public class GameManager
         set
         {
             _gameData.Gold = value;
+            // TODO 재화 습득시 저장이 아니라 일정 시간마다 저장으로 하
             SaveGame();
             OnResourcesChanged?.Invoke();
         }
@@ -129,6 +138,7 @@ public class GameManager
         set
         {
             _gameData.Mana = value;
+            // TODO 재화 습득시 저장이 아니라 일정 시간마다 저장으로 하기
             SaveGame();
             OnResourcesChanged?.Invoke();
         }
@@ -139,6 +149,7 @@ public class GameManager
         set
         {
             _gameData.Ruby = value;
+            // TODO 재화 습득시 저장이 아니라 일정 시간마다 저장으로 하기
             SaveGame();
             OnResourcesChanged?.Invoke();
         }
@@ -149,6 +160,7 @@ public class GameManager
         set
         {
             _gameData.DimensionEnergy = value;
+            // TODO 재화 습득시 저장이 아니라 일정 시간마다 저장으로 하기
             SaveGame();
             OnResourcesChanged?.Invoke();
         }
@@ -182,6 +194,11 @@ public class GameManager
     {
         get { return _gameData.AccLevelDictionary; }
         set { _gameData.AccLevelDictionary = value; }
+    }
+    public Dictionary<int, ShieldData> ShieldLevelDictionary
+    {
+        get { return _gameData.ShieldLevelDictionary; }
+        set { _gameData.ShieldLevelDictionary = value; }
     }
 
 
@@ -228,6 +245,13 @@ public class GameManager
     #endregion
     #endregion
 
+    public void RefreshGame()
+    {
+        _path = Application.persistentDataPath + "/" + UserName + ".json";
+        _gameData = new GameData();
+        SaveGame();
+    }
+
     public void Init()
     {
         _path = Application.persistentDataPath + "/" + UserName + ".json";
@@ -257,8 +281,8 @@ public class GameManager
     {
         _path = Application.persistentDataPath + "/" + UserName + ".json";
 
-        //TODO TEmp Clear
-        _gameData.ContinueInfo.Clear();
+        // TODO TEmp Clear
+        // _gameData.ContinueInfo.Clear();
 
         if (File.Exists(_path) == false)
         {

@@ -93,6 +93,8 @@ public class UI_GameScene : UI_Scene
         BindToggle(typeof(Toggles));
         BindText(typeof(Texts));
 
+        GetButton((int)Buttons.SettingButton).gameObject.BindEvent(OnClickSettingButton);
+
         GetToggle((int)Toggles.AccessoriesToggle).gameObject.BindEvent(OnClickAccessoriesToggle);
         GetToggle((int)Toggles.DungeonToggle).gameObject.BindEvent(OnClickDungeonToggle);
         GetToggle((int)Toggles.EquipmentToggle).gameObject.BindEvent(OnClickEquipmentToggle);
@@ -280,6 +282,13 @@ public class UI_GameScene : UI_Scene
         GetToggle((int)Toggles.ShopToggle).isOn = true;
         ShowUI(_shopPopupUI.gameObject, GetText((int)Texts.ShopText), GetObject((int)GameObjects.CheckShopImage));
         _isSelectedShop = true;
+    }
+
+    void OnClickSettingButton()
+    {
+        // TODO Temp임시로 게임 초기화로 해 놓았음
+        Managers.Game.RefreshGame();
+        Managers.Game.Gold = 100000;
     }
 
     void Awake()

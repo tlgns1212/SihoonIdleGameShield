@@ -21,6 +21,7 @@ public class UI_ShieldItem : UI_Base
         ATKStatText,
         PlusNumText,
         BuyCostText,
+        PlusText
     }
 
     enum Buttons
@@ -30,7 +31,13 @@ public class UI_ShieldItem : UI_Base
     #endregion
 
     ScrollRect _scrollRect;
+    int _id;
+    Data.ShieldData _data;
+    ShieldData _shieldData;
     bool _isDrag = false;
+    int _level = 0;
+    int _buyCost = 0;
+    int _totalLevel = 0;
 
     private void Awake()
     {
@@ -45,27 +52,105 @@ public class UI_ShieldItem : UI_Base
         BindImage(typeof(Images));
         BindButton(typeof(Buttons));
 
-        Refresh();
+        GetButton((int)Buttons.BuySquareButton).gameObject.BindEvent(OnClickBuySquareButton);
+
+        // Refresh();
 
         return true;
     }
 
     public void SetInfo(int shieldID, ScrollRect scrollRect)
     {
+        _id = shieldID;
+        _data = Managers.Data.ShieldDic[shieldID];
         _scrollRect = scrollRect;
-        Data.ShieldData data = Managers.Data.ShieldDic[shieldID];
-        GetText((int)Texts.TitleText).text = data.TitleText;
-        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
-        GetText((int)Texts.ATKText).text = data.ItemEffectText;
-        // TODO 수치 입력하기
-        GetText((int)Texts.ATKStatText).text = "100.0A";
+        
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
+        GetText((int)Texts.ATKText).text = _data.ItemEffectText;
+
+        if (Managers.Game.ShieldLevelDictionary.TryGetValue(_id, out ShieldData sD))
+        {
+            _shieldData = sD;
+        }
+        else
+        {
+            _shieldData = new ShieldData();
+            Managers.Game.ShieldLevelDictionary.Add(_id, _shieldData);
+        }
+        _level = _shieldData.Level;
+        _totalLevel = _data.LevelDatas.Count - 1;
+
+        if(_shieldData.isCompleted == true || _shieldData.isLocked == true)
+        {
+            GetButton((int)Buttons.BuySquareButton).interactable = false;
+            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.black;
+        }
+        else
+        {
+            GetButton((int)Buttons.BuySquareButton).interactable = true;
+            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.white;
+        }
 
         Refresh();
     }
 
     void Refresh()
     {
+        if (Managers.Game.ShieldLevelDictionary[_id].isCompleted == true || Managers.Game.ShieldLevelDictionary[_id].isLocked == true)
+        {
+            GetButton((int)Buttons.BuySquareButton).interactable = false;
+            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.black;
+        }
 
+        GetText((int)Texts.TitleText).text = _data.TitleText;
+        // TODO 수치 입력하기
+
+        GetText((int)Texts.ATKStatText).text = _data.LevelDatas[_level].LValue.ToString(); ;
+        
+        
+        if (_level == _totalLevel)
+        {
+            GetText((int)Texts.PlusText).gameObject.SetActive(false);
+            GetText((int)Texts.PlusNumText).text = "다음 무기 열기";
+        }
+        else
+        {
+            GetText((int)Texts.PlusText).gameObject.SetActive(true);
+            GetText((int)Texts.PlusNumText).text = (_data.LevelDatas[_level + 1].LValue - _data.LevelDatas[_level].LValue).ToString();
+        }
+        _buyCost = _data.LevelDatas[_level].NextCost;
+        GetText((int)Texts.BuyCostText).text = _buyCost.ToString();
+    }
+    void LevelUp()
+    {
+        if (_level + 1 <= _totalLevel)
+        {
+            _level += 1;
+            _shieldData.Level = _level;
+            Managers.Game.ContinueInfo.Atk = _data.LevelDatas[_level].LValue;
+        }
+        else
+        {
+            Data.ShieldData nextData = Managers.Data.ShieldDic[_id + 1];
+            Managers.Game.ContinueInfo.Atk = nextData.LevelDatas[0].LValue;
+            Managers.Game.ShieldLevelDictionary[_id].isCompleted = true;
+        }
+        Refresh();
+    }
+
+    void OnClickBuySquareButton()
+    {
+        if (Managers.Game.ShieldLevelDictionary[_id].isCompleted == true || Managers.Game.ShieldLevelDictionary[_id].isLocked == true)
+            return;
+        if (Managers.Game.Gold < _buyCost)
+        {
+            print("재화가 부족합니다.");
+        }
+        else
+        {
+            Managers.Game.Gold -= _buyCost;
+            LevelUp();
+        }
     }
 
     #region 버튼 스크롤 대응

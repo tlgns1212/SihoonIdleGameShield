@@ -52,41 +52,73 @@ public class MonsterController : CreatureController
         float manaDRate = MonsterData.ManaDropRate;
         float dimensionEnergyDRate = MonsterData.DimensionEnergyDropRate;
         float rubyDRate = MonsterData.RubyDropRate;
+
+        float gotGold = 0;
+        float gotMana = 0;
+        float gotDEnergy = 0;
+        float gotRuby = 0;
         if (goldDRate >= 1.0f)
         {
-            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * goldDRate).ToString(), Define.ResourceType.Gold);
+            gotGold = Managers.Game.UserLevel * goldDRate;
+            Managers.Object.ShowResourceFont(CenterPosition, transform, gotGold.ToString(), Define.ResourceType.Gold);
+            Managers.Game.Gold += (int)gotGold;
         }
         else
         {
             if (UnityEngine.Random.value < goldDRate)
-                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Gold);
+            {
+                gotGold = Managers.Game.UserLevel;
+                Managers.Object.ShowResourceFont(CenterPosition, transform, gotGold.ToString(), Define.ResourceType.Gold);
+                Managers.Game.Gold += (int)gotGold;
+            }
         }
         if (manaDRate >= 1.0f)
         {
-            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * manaDRate).ToString(), Define.ResourceType.Mana);
+            gotMana = Managers.Game.UserLevel * manaDRate;
+            Managers.Object.ShowResourceFont(CenterPosition, transform, gotMana.ToString(), Define.ResourceType.Mana);
+            Managers.Game.Mana += (int)gotMana;
         }
         else
         {
             if (UnityEngine.Random.value < manaDRate)
-                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Mana);
+            {
+                gotMana = Managers.Game.UserLevel;
+                Managers.Object.ShowResourceFont(CenterPosition, transform, gotMana.ToString(), Define.ResourceType.Mana);
+                Managers.Game.Mana += (int)gotMana;
+            }
+                
         }
         if (dimensionEnergyDRate >= 1.0f)
         {
-            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * dimensionEnergyDRate).ToString(), Define.ResourceType.DimensionEnergy);
+            gotDEnergy = Managers.Game.UserLevel * dimensionEnergyDRate;
+            Managers.Object.ShowResourceFont(CenterPosition, transform, gotDEnergy.ToString(), Define.ResourceType.DimensionEnergy);
+            Managers.Game.DimensionEnergy += (int)gotDEnergy;
         }
         else
         {
             if (UnityEngine.Random.value < dimensionEnergyDRate)
-                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.DimensionEnergy);
+            {
+                gotDEnergy = Managers.Game.UserLevel;
+                Managers.Object.ShowResourceFont(CenterPosition, transform, gotDEnergy.ToString(), Define.ResourceType.DimensionEnergy);
+                Managers.Game.DimensionEnergy += (int)gotDEnergy;
+            }
+                
         }
         if (rubyDRate >= 1.0f)
         {
-            Managers.Object.ShowResourceFont(CenterPosition, transform, (Managers.Game.UserLevel * rubyDRate).ToString(), Define.ResourceType.Ruby);
+            gotRuby = Managers.Game.UserLevel * rubyDRate;
+            Managers.Object.ShowResourceFont(CenterPosition, transform, gotRuby.ToString(), Define.ResourceType.Ruby);
+            Managers.Game.Ruby += (int)gotRuby;
         }
         else
         {
             if (UnityEngine.Random.value < rubyDRate)
-                Managers.Object.ShowResourceFont(CenterPosition, transform, Managers.Game.UserLevel.ToString(), Define.ResourceType.Ruby);
+            {
+                gotRuby = Managers.Game.UserLevel;
+                Managers.Object.ShowResourceFont(CenterPosition, transform, gotRuby.ToString(), Define.ResourceType.Ruby);
+                Managers.Game.Ruby += (int)gotRuby;
+            }
+                
         }
     }
 }
