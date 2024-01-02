@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class UI_DungeonItem : UI_Base
     {
         ItemSquareIcon,
         ItemIcon,
+        LockButtonImage
     }
 
     enum Texts
@@ -28,6 +30,7 @@ public class UI_DungeonItem : UI_Base
     #endregion
 
     ScrollRect _scrollRect;
+    Action _action;
     bool _isDrag = false;
 
     private void Awake()
@@ -48,9 +51,10 @@ public class UI_DungeonItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int dungeonID, ScrollRect scrollRect)
+    public void SetInfo(int dungeonID, ScrollRect scrollRect, Action callback)
     {
         _scrollRect = scrollRect;
+        _action = callback;
         Data.DungeonData data = Managers.Data.DungeonDic[dungeonID];
 
         GetText((int)Texts.TitleText).text = data.TitleText;
@@ -67,7 +71,7 @@ public class UI_DungeonItem : UI_Base
         Refresh();
     }
 
-    void Refresh()
+    public void Refresh()
     {
 
     }

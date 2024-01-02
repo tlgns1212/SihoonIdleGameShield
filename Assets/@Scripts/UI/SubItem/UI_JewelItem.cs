@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class UI_JewelItem : UI_Base
 
     ScrollRect _scrollRect;
     bool _isDrag = false;
+    Action _action;
 
     private void Awake()
     {
@@ -34,9 +36,10 @@ public class UI_JewelItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int jewelID, ScrollRect scrollRect)
+    public void SetInfo(int jewelID, ScrollRect scrollRect, Action callback)
     {
         _scrollRect = scrollRect;
+        _action = callback;
         Data.JewelData data = Managers.Data.JewelDic[jewelID];
 
         GetImage((int)Images.JewelImage).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
@@ -46,7 +49,7 @@ public class UI_JewelItem : UI_Base
         Refresh();
     }
 
-    void Refresh()
+    public void Refresh()
     {
 
     }

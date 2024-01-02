@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,15 +27,20 @@ public class UI_NoMaxAccessoriesItem : UI_Base
     enum Buttons
     {
         BuySquareButton,
+        LockButton
     }
     #endregion
 
     ScrollRect _scrollRect;
+    Action _action;
     int _id;
     bool _isDrag = false;
     string _itemEffectString;
-    LevelData _levelData;
-    List<Data.LevelData> _raiseLevelData = new List<Data.LevelData>();
+    Data.AccessoriesData _data;
+    AccessoriesGameData _accessoriesGameData;
+    int _levelIndex = 0;
+
+    // TODO RaiseGoldCost, RaiseLValue, 등등 여기에 들어가는 것들을 프로퍼티로 만들어서 두번 작업하지 않고 한번에 되게 하기
 
     private void Awake()
     {
@@ -49,68 +55,130 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         BindImage(typeof(Images));
         BindButton(typeof(Buttons));
 
-        GetButton((int)Buttons.BuySquareButton).gameObject.BindEvent(HandleOnClickBuySquareButton);
-
-        Refresh();
+        GetButton((int)Buttons.BuySquareButton).gameObject.BindEvent(OnClickBuySquareButton);
+        GetButton((int)Buttons.LockButton).gameObject.BindEvent(OnClickLockButton);
 
         return true;
     }
 
-    public void SetInfo(int accessoriesID, ScrollRect scrollRect)
+    public void SetInfo(int accessoriesID, ScrollRect scrollRect, Action callback)
     {
         _id = accessoriesID;
         _scrollRect = scrollRect;
-        Data.AccessoriesData data = Managers.Data.AccessoriesDic[accessoriesID];
-        _raiseLevelData = data.RaiseLevelDatas;
+        _action = callback;
 
-        GetText((int)Texts.TitleText).text = data.TitleText;
-        _itemEffectString = data.ItemEffectText;
+        _data = Managers.Data.AccessoriesDic[accessoriesID];
 
-        if (Managers.Game.AccLevelDictionary.TryGetValue(accessoriesID, out LevelData accLevel))
+        GetText((int)Texts.TitleText).text = _data.TitleText;
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
+        _itemEffectString = _data.ItemEffectText;
+
+        if (Managers.Game.AccessoriesLevelDictionary.TryGetValue(accessoriesID, out AccessoriesGameData accLevel))
         {
-            _levelData = accLevel;
+            _accessoriesGameData = accLevel;
         }
         else
         {
-            _levelData = new LevelData() { isOpen = true, Level = 0, Value = 0 };
-            Managers.Game.AccLevelDictionary.Add(accessoriesID, _levelData);
+            _accessoriesGameData = new AccessoriesGameData();
+            Managers.Game.AccessoriesLevelDictionary.Add(accessoriesID, _accessoriesGameData);
         }
-        if (_levelData.isOpen)
-        {
-            // TODO 잠금 풀기(지금 잠금이 없음 만들어야 함)
-        }
-        GetText((int)Texts.LvText).text = $"LV. {_levelData.Level}";
-        GetText((int)Texts.ItemEffectText).text = $"{_itemEffectString} {data.LevelDatas[_levelData.Level]}%증가";
-        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
-        // TODO 레벨에 맞게 구매 비용, 증가하는 공격력 등 해줘야 함.
+
+
+
         Refresh();
     }
-    //TODOTODOTODOTODO 여기서 RaiseRate에 따라서 점차적으로 증가하는거 하는중, Level 하나씩 올라가는건 대략적으로 했음, 한번 확인 부탁
-    public void ChangeLevel(int levelPlus = 1)
+
+    public void LevelUp(int levelPlus = 1)
     {
-        print(Managers.Game.AccLevelDictionary[_id].Level);
-        _levelData.Level += levelPlus;
-        print(Managers.Game.AccLevelDictionary[_id].Level);
-        print(Managers.Game.AccLevelDictionary[_id].Value);
-        int value = Managers.Game.AccLevelDictionary[_id].Value;
-        GetText((int)Texts.LvText).text = $"LV. {_levelData.Level}";
-        int raiseRate = 0;
-        foreach (Data.LevelData lvlData in _raiseLevelData)
-        {
-            raiseRate = lvlData.LValue;
-            if (lvlData.Level > _levelData.Level)
-            {
-                break;
-            }
-        }
-        value += raiseRate;
-        print(Managers.Game.AccLevelDictionary[_id].Value);
-        GetText((int)Texts.ItemEffectText).text = $"{_itemEffectString} {value}%증가";
+        _accessoriesGameData.LValue += GetLValue();
+        _accessoriesGameData.BuyGold += GetCost();
+        _accessoriesGameData.Level += levelPlus;
+
+        // TODO Define.Accessories 특성 하나 만들어서 Strength면 힘, MoveSpeed면 이동속도 증가하게 만들기, 등...
+        Refresh();
     }
 
-    void Refresh()
+    public void Refresh()
     {
+        MakeLevelIndex();
+        GetText((int)Texts.LvText).text = $"LV. {_accessoriesGameData.Level}";
+        GetText((int)Texts.ItemEffectText).text = $"{_itemEffectString} {_accessoriesGameData.LValue}%증가";
+        GetText((int)Texts.PlusNumText).text = GetLValue().ToString();
+        GetText((int)Texts.BuyCostText).text = GetCost().ToString();
 
+        UpdateContinueInfo((Define.AccessoriesItemType)_data.ItemType);
+    }
+
+    void UpdateContinueInfo(Define.AccessoriesItemType itemType)
+    {
+        switch (itemType)
+        {
+            case Define.AccessoriesItemType.AtkDamage:
+                Managers.Game.ContinueInfo.AccAtk = _accessoriesGameData.LValue;
+                break;
+            case Define.AccessoriesItemType.CriticalDamage:
+                Managers.Game.ContinueInfo.CriDamage = 1 + _accessoriesGameData.LValue / 100;
+                break;
+            case Define.AccessoriesItemType.KillGoldRate:
+                Managers.Game.ContinueInfo.KillGold = _accessoriesGameData.LValue;
+                break;
+            case Define.AccessoriesItemType.SaveGoldRate:
+                Managers.Game.ContinueInfo.WaitGold = _accessoriesGameData.LValue / 100;
+                break;
+            case Define.AccessoriesItemType.ManaGetRate:
+                Managers.Game.ContinueInfo.ManaGetRate = 1 + _accessoriesGameData.LValue / 100;
+                break;
+            case Define.AccessoriesItemType.DEnergyGetRate:
+                Managers.Game.ContinueInfo.DEnergyGetRate = 1 + _accessoriesGameData.LValue / 100;
+                break;
+            case Define.AccessoriesItemType.RubyGetRate:
+                Managers.Game.ContinueInfo.RubyGetRate = 1 + _accessoriesGameData.LValue / 100;
+                break;
+        }
+    }
+
+    void OnClickLockButton()
+    {
+        _accessoriesGameData.isLocked = false;
+        _accessoriesGameData.LValue = _data.LevelDatas[0].LValue;
+        _accessoriesGameData.BuyGold = _data.LevelDatas[0].NextCost;
+
+        if (_accessoriesGameData.isLocked == false)
+        {
+            GetButton((int)Buttons.LockButton).gameObject.SetActive(false);
+        }
+        Refresh();
+    }
+
+    void OnClickBuySquareButton()
+    {
+        if (Managers.Game.Gold >= _accessoriesGameData.BuyGold)
+        {
+            Managers.Game.Gold -= _accessoriesGameData.BuyGold;
+            LevelUp();
+        }
+    }
+
+    void MakeLevelIndex()
+    {
+        while (true)
+        {
+            if (_levelIndex >= _data.RaiseLevelDatas.Count - 1)
+                break;
+            if (_data.RaiseLevelDatas[_levelIndex].Level > _accessoriesGameData.Level)
+                break;
+            _levelIndex++;
+        }
+    }
+
+    int GetLValue()
+    {
+        return _data.RaiseLevelDatas[_levelIndex].LValue;
+    }
+
+    int GetCost()
+    {
+        return _data.RaiseLevelDatas[_levelIndex].NextCost;
     }
 
     #region 버튼 스크롤 대응
@@ -133,11 +201,6 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         _isDrag = false;
         PointerEventData pointerEventData = baseEventData as PointerEventData;
         _scrollRect.OnEndDrag(pointerEventData);
-    }
-
-    void HandleOnClickBuySquareButton()
-    {
-        ChangeLevel();
     }
     #endregion
 }

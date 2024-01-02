@@ -6,8 +6,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 10.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":1,"NextCost": 3},
+                { "Level":100, "LValue":1, "NextCost": 30},
+                { "Level":10000, "LValue":1, "NextCost": 300},
+                { "Level":100000, "LValue":1, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10002,
@@ -15,8 +23,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_6.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 20.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":2, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":2,"NextCost": 3},
+                { "Level":100, "LValue":2, "NextCost": 30},
+                { "Level":10000, "LValue":2, "NextCost": 300},
+                { "Level":100000, "LValue":2, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10003,
@@ -24,8 +40,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 30.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":3, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":3,"NextCost": 3},
+                { "Level":100, "LValue":3, "NextCost": 30},
+                { "Level":10000, "LValue":3, "NextCost": 300},
+                { "Level":100000, "LValue":3, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10004,
@@ -33,8 +57,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 40.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":4, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":4,"NextCost": 3},
+                { "Level":100, "LValue":4, "NextCost": 30},
+                { "Level":10000, "LValue":4, "NextCost": 300},
+                { "Level":100000, "LValue":4, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10005,
@@ -42,8 +74,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 50.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":5, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":5,"NextCost": 3},
+                { "Level":100, "LValue":5, "NextCost": 30},
+                { "Level":10000, "LValue":5, "NextCost": 300},
+                { "Level":100000, "LValue":5, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10006,
@@ -51,8 +91,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 60.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":6, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":6,"NextCost": 3},
+                { "Level":100, "LValue":6, "NextCost": 30},
+                { "Level":10000, "LValue":6, "NextCost": 300},
+                { "Level":100000, "LValue":6, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10007,
@@ -60,8 +108,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 70.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":7, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":7,"NextCost": 3},
+                { "Level":100, "LValue":7, "NextCost": 30},
+                { "Level":10000, "LValue":7, "NextCost": 300},
+                { "Level":100000, "LValue":7, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10008,
@@ -69,8 +125,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 80.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":8, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":8,"NextCost": 3},
+                { "Level":100, "LValue":8, "NextCost": 30},
+                { "Level":10000, "LValue":8, "NextCost": 300},
+                { "Level":100000, "LValue":8, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10009,
@@ -78,8 +142,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 90.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":9, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":9,"NextCost": 3},
+                { "Level":100, "LValue":9, "NextCost": 30},
+                { "Level":10000, "LValue":9, "NextCost": 300},
+                { "Level":100000, "LValue":9, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10010,
@@ -87,8 +159,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 90.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":9, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":9,"NextCost": 3},
+                { "Level":100, "LValue":9, "NextCost": 30},
+                { "Level":10000, "LValue":9, "NextCost": 300},
+                { "Level":100000, "LValue":9, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10011,
@@ -96,8 +176,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 90.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":9, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":9,"NextCost": 3},
+                { "Level":100, "LValue":9, "NextCost": 30},
+                { "Level":10000, "LValue":9, "NextCost": 300},
+                { "Level":100000, "LValue":9, "NextCost": 3000}
+            ]
         },
         {
             "DataId": 10012,
@@ -105,8 +193,16 @@
             "PrefabLabel": "SaviourItem",
             "IconLabel": "icons_3.sprite",
             "BuyResource": "Gold",
-            "LevelDatas": [],
-            "RaiseLevelDatas":[]
+            "TotalTime" : 90.0,
+            "LevelDatas": [
+                { "Level": 0, "LValue":9, "NextCost": 3}
+            ],
+            "RaiseLevelDatas":[
+                { "Level":0, "LValue":9,"NextCost": 3},
+                { "Level":100, "LValue":9, "NextCost": 30},
+                { "Level":10000, "LValue":9, "NextCost": 300},
+                { "Level":100000, "LValue":9, "NextCost": 3000}
+            ]
         }
     ]
 }

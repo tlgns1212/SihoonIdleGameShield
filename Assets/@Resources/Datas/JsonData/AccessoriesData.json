@@ -3,6 +3,7 @@
         {
             "DataId": 10001,
             "TitleText": "힘의 반지",
+            "ItemType": 0,
             "ItemEffectText": "공격력",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -21,48 +22,52 @@
         {
             "DataId": 10002,
             "TitleText": "민첩의 반지",
+            "ItemType": 1,
             "ItemEffectText": "공격속도",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_14.sprite",
             "BuyResource": "Gold",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3},
-                { "Level": 1, "LValue":2, "NextCost": 6},
-                { "Level": 2, "LValue":3, "NextCost": 9},
-                { "Level": 3, "LValue":4, "NextCost": 12},
-                { "Level": 4, "LValue":5, "NextCost": 15},
-                { "Level": 5, "LValue":6, "NextCost": 18},
-                { "Level": 6, "LValue":7, "NextCost": 21},
-                { "Level": 7, "LValue":8, "NextCost": 24},
-                { "Level": 8, "LValue":9, "NextCost": 270}
+                { "Level": 0, "LValue":10, "NextCost": 3},
+                { "Level": 1, "LValue":20, "NextCost": 6},
+                { "Level": 2, "LValue":30, "NextCost": 9},
+                { "Level": 3, "LValue":40, "NextCost": 12},
+                { "Level": 4, "LValue":50, "NextCost": 15},
+                { "Level": 5, "LValue":60, "NextCost": 18},
+                { "Level": 6, "LValue":70, "NextCost": 21},
+                { "Level": 7, "LValue":80, "NextCost": 24},
+                { "Level": 8, "LValue":90, "NextCost": 27},
+                { "Level": 9, "LValue":100, "NextCost": 30}
             ],
             "RaiseLevelDatas":[]
         },
         {
             "DataId": 10003,
             "TitleText": "속도의 반지",
+            "ItemType": 2,
             "ItemEffectText": "이동 속도",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Gold",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3},
-                { "Level": 1, "LValue":2, "NextCost": 3},
-                { "Level": 2, "LValue":3, "NextCost": 3},
-                { "Level": 3, "LValue":4, "NextCost": 3},
-                { "Level": 4, "LValue":5, "NextCost": 3},
-                { "Level": 5, "LValue":6, "NextCost": 3},
-                { "Level": 6, "LValue":7, "NextCost": 3},
-                { "Level": 7, "LValue":8, "NextCost": 3},
-                { "Level": 8, "LValue":9, "NextCost": 3}
+                { "Level": 0, "LValue":3, "NextCost": 3},
+                { "Level": 1, "LValue":6, "NextCost": 3},
+                { "Level": 2, "LValue":9, "NextCost": 3},
+                { "Level": 3, "LValue":12, "NextCost": 3},
+                { "Level": 4, "LValue":15, "NextCost": 3},
+                { "Level": 5, "LValue":18, "NextCost": 3},
+                { "Level": 6, "LValue":21, "NextCost": 3},
+                { "Level": 7, "LValue":24, "NextCost": 3},
+                { "Level": 8, "LValue":27, "NextCost": 3}
             ],
             "RaiseLevelDatas":[]
         },
         {
             "DataId": 10004,
             "TitleText": "치명타의 반지",
+            "ItemType": 3,
             "ItemEffectText": "치명타 공격력",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -81,6 +86,7 @@
         {
             "DataId": 10005,
             "TitleText": "치명타 확률의 반지",
+            "ItemType": 4,
             "ItemEffectText": "치명타 확률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
@@ -95,13 +101,45 @@
                 { "Level": 5, "LValue":6, "NextCost": 3},
                 { "Level": 6, "LValue":7, "NextCost": 3},
                 { "Level": 7, "LValue":8, "NextCost": 3},
-                { "Level": 8, "LValue":9, "NextCost": 3}
+                { "Level": 8, "LValue":9, "NextCost": 3},
+                { "Level": 9, "LValue":10, "NextCost": 3},
+                { "Level": 10, "LValue":11, "NextCost": 3},
+                { "Level": 11, "LValue":12, "NextCost": 3},
+                { "Level": 12, "LValue":13, "NextCost": 3},
+                { "Level": 13, "LValue":14, "NextCost": 3},
+                { "Level": 14, "LValue":15, "NextCost": 3},
+                { "Level": 15, "LValue":16, "NextCost": 3},
+                { "Level": 16, "LValue":17, "NextCost": 3},
+                { "Level": 17, "LValue":18, "NextCost": 3},
+                { "Level": 18, "LValue":19, "NextCost": 3},
+                { "Level": 19, "LValue":20, "NextCost": 3},
+                { "Level": 20, "LValue":21, "NextCost": 3},
+                { "Level": 21, "LValue":22, "NextCost": 3},
+                { "Level": 22, "LValue":23, "NextCost": 3},
+                { "Level": 23, "LValue":24, "NextCost": 3},
+                { "Level": 24, "LValue":25, "NextCost": 3},
+                { "Level": 25, "LValue":26, "NextCost": 3},
+                { "Level": 26, "LValue":27, "NextCost": 3},
+                { "Level": 27, "LValue":28, "NextCost": 3},
+                { "Level": 28, "LValue":29, "NextCost": 3},
+                { "Level": 29, "LValue":30, "NextCost": 3},
+                { "Level": 30, "LValue":31, "NextCost": 3},
+                { "Level": 31, "LValue":32, "NextCost": 3},
+                { "Level": 32, "LValue":33, "NextCost": 3},
+                { "Level": 33, "LValue":34, "NextCost": 3},
+                { "Level": 34, "LValue":35, "NextCost": 3},
+                { "Level": 35, "LValue":36, "NextCost": 3},
+                { "Level": 36, "LValue":37, "NextCost": 3},
+                { "Level": 37, "LValue":38, "NextCost": 3},
+                { "Level": 38, "LValue":39, "NextCost": 3},
+                { "Level": 39, "LValue":40, "NextCost": 3}
             ],
             "RaiseLevelDatas":[]
         },
         {
             "DataId": 10006,
             "TitleText": "삥뜯기 반지",
+            "ItemType": 5,
             "ItemEffectText": "적 사망시 골드 획득률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -120,6 +158,7 @@
         {
             "DataId": 10007,
             "TitleText": "자릿세의 반지",
+            "ItemType": 6,
             "ItemEffectText": "수호비 획득률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -138,6 +177,7 @@
         {
             "DataId": 10008,
             "TitleText": "마나의 반지",
+            "ItemType": 7,
             "ItemEffectText": "마나 획득률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -156,6 +196,7 @@
         {
             "DataId": 10009,
             "TitleText": "차원의 반지",
+            "ItemType": 8,
             "ItemEffectText": "차원 에너지 획득률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -174,6 +215,7 @@
         {
             "DataId": 10010,
             "TitleText": "루비의 반지",
+            "ItemType": 9,
             "ItemEffectText": "루비 획득률",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
@@ -191,39 +233,49 @@
         },
         {
             "DataId": 10011,
-            "TitleText": "루비의 반지",
-            "ItemEffectText": "루비 획득률",
+            "TitleText": "방패 감소 반지",
+            "ItemType": 10,
+            "ItemEffectText": "방패 업그레이드 비용 할인",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Ruby",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":5, "NextCost": 3},
+                { "Level": 1, "LValue":10, "NextCost": 3},
+                { "Level": 2, "LValue":15, "NextCost": 3},
+                { "Level": 3, "LValue":20, "NextCost": 3},
+                { "Level": 4, "LValue":25, "NextCost": 3},
+                { "Level": 5, "LValue":30, "NextCost": 3},
+                { "Level": 6, "LValue":35, "NextCost": 3},
+                { "Level": 7, "LValue":40, "NextCost": 3},
+                { "Level": 8, "LValue":45, "NextCost": 3},
+                { "Level": 9, "LValue":50, "NextCost": 3}
             ],
-            "RaiseLevelDatas":[
-                { "Level":0, "LValue":1, "NextCost": 3},
-                { "Level":100, "LValue":10, "NextCost": 3},
-                { "Level":10000, "LValue":100, "NextCost": 3},
-                { "Level":100000, "LValue":1000, "NextCost": 3}
-            ]
+            "RaiseLevelDatas":[]
         },
         {
             "DataId": 10012,
-            "TitleText": "루비의 반지",
-            "ItemEffectText": "루비 획득률",
+            "TitleText": "수호비 감소 반지",
+            "ItemType": 11,
+            "ItemEffectText": "수호비 업그레이드 비용 할인",
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Ruby",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":5, "NextCost": 3},
+                { "Level": 1, "LValue":10, "NextCost": 3},
+                { "Level": 2, "LValue":15, "NextCost": 3},
+                { "Level": 3, "LValue":20, "NextCost": 3},
+                { "Level": 4, "LValue":25, "NextCost": 3},
+                { "Level": 5, "LValue":30, "NextCost": 3},
+                { "Level": 6, "LValue":35, "NextCost": 3},
+                { "Level": 7, "LValue":40, "NextCost": 3},
+                { "Level": 8, "LValue":45, "NextCost": 3},
+                { "Level": 9, "LValue":50, "NextCost": 3}
             ],
-            "RaiseLevelDatas":[
-                { "Level":0, "LValue":1, "NextCost": 3},
-                { "Level":100, "LValue":10, "NextCost": 3},
-                { "Level":10000, "LValue":100, "NextCost": 3},
-                { "Level":100000, "LValue":1000, "NextCost": 3}
-            ]
+            "RaiseLevelDatas":[]
         }
     ]
 }

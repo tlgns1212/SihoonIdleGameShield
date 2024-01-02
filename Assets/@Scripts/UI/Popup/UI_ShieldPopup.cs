@@ -16,6 +16,7 @@ public class UI_ShieldPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_ShieldItem> _items = new List<UI_ShieldItem>();
 
     private void Awake()
     {
@@ -40,7 +41,14 @@ public class UI_ShieldPopup : UI_Popup
         for (int i = 0; i < 10; i++)
         {
             UI_ShieldItem si = Managers.UI.MakeSubItem<UI_ShieldItem>(GetObject((int)GameObjects.ShieldItem).transform);
-            si.SetInfo(10001 + i, _scrollRect);
+            _items.Add(si);
+            si.SetInfo(10001 + i, _scrollRect, () =>
+            {
+                foreach (UI_ShieldItem item in _items)
+                {
+                    item.Refresh();
+                }
+            });
         }
 
         return true;

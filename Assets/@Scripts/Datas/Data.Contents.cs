@@ -84,6 +84,7 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
+        public int ItemType;
         public string PrefabLabel;
         public string ItemEffectText;
         public string ItemEffectNumText;
@@ -140,7 +141,6 @@ namespace Data
         public int DataID;
         public string TitleText;
         public string ItemEffectText;
-        public int MaxLevel;
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
@@ -193,6 +193,7 @@ namespace Data
         public string PrefabLabel;
         public string IconLabel;
         public string BuyResource;
+        public float TotalTime;
         public List<LevelData> LevelDatas = new List<LevelData>();
         public List<LevelData> RaiseLevelDatas = new List<LevelData>();
     }

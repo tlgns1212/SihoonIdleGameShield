@@ -203,10 +203,10 @@ public class UIManager
             return;
         }
 
-        if (_popupStack.Count < 0)
-            Time.timeScale = 0;
-        else
-            Time.timeScale = 1;
+        // if (_popupStack.Count < 0)
+        //     Time.timeScale = 0;
+        // else
+        //     Time.timeScale = 1;
 
         DOTween.timeScale = 1;
         OnTimeScaleChanged?.Invoke((int)Time.timeScale);

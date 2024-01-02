@@ -16,6 +16,8 @@ public class UI_AccessoriesPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_MaxAccessoriesItem> _maxItems = new List<UI_MaxAccessoriesItem>();
+    List<UI_NoMaxAccessoriesItem> _noItems = new List<UI_NoMaxAccessoriesItem>();
 
     private void Awake()
     {
@@ -39,16 +41,37 @@ public class UI_AccessoriesPopup : UI_Popup
 
         for (int i = 0; i < 12; i++)
         {
-
             switch (Util.ParseEnum<Define.AccessoriesType>(Managers.Data.AccessoriesDic[10001 + i].PrefabLabel))
             {
                 case Define.AccessoriesType.NoMaxAccessoriesItem:
                     UI_NoMaxAccessoriesItem ani = Managers.UI.MakeSubItem<UI_NoMaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
-                    ani.SetInfo(10001 + i, _scrollRect);
+                    _noItems.Add(ani);
+                    ani.SetInfo(10001 + i, _scrollRect, () =>
+                    {
+                        foreach (UI_NoMaxAccessoriesItem item in _noItems)
+                        {
+                            item.Refresh();
+                        }
+                        foreach (UI_MaxAccessoriesItem item in _maxItems)
+                        {
+                            item.Refresh();
+                        }
+                    });
                     break;
                 case Define.AccessoriesType.MaxAccessoriesItem:
                     UI_MaxAccessoriesItem ai = Managers.UI.MakeSubItem<UI_MaxAccessoriesItem>(GetObject((int)GameObjects.AccessoriesItem).transform);
-                    ai.SetInfo(10001 + i, _scrollRect);
+                    _maxItems.Add(ai);
+                    ai.SetInfo(10001 + i, _scrollRect, () =>
+                    {
+                        foreach (UI_NoMaxAccessoriesItem item in _noItems)
+                        {
+                            item.Refresh();
+                        }
+                        foreach (UI_MaxAccessoriesItem item in _maxItems)
+                        {
+                            item.Refresh();
+                        }
+                    });
                     break;
             }
 

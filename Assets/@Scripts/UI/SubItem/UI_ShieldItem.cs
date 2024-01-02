@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class UI_ShieldItem : UI_Base
         ItemSquareIcon,
         ItemIcon,
         GoldImage,
+        LockButtonImage
     }
 
     enum Texts
@@ -31,9 +33,10 @@ public class UI_ShieldItem : UI_Base
     #endregion
 
     ScrollRect _scrollRect;
+    Action _action;
     int _id;
     Data.ShieldData _data;
-    ShieldData _shieldData;
+    ShieldGameData _shieldGameData;
     bool _isDrag = false;
     int _level = 0;
     int _buyCost = 0;
@@ -59,55 +62,52 @@ public class UI_ShieldItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int shieldID, ScrollRect scrollRect)
+    public void SetInfo(int shieldID, ScrollRect scrollRect, Action callback)
     {
         _id = shieldID;
         _data = Managers.Data.ShieldDic[shieldID];
         _scrollRect = scrollRect;
-        
+        _action = callback;
+
         GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
         GetText((int)Texts.ATKText).text = _data.ItemEffectText;
 
-        if (Managers.Game.ShieldLevelDictionary.TryGetValue(_id, out ShieldData sD))
+        if (Managers.Game.ShieldLevelDictionary.TryGetValue(_id, out ShieldGameData sD))
         {
-            _shieldData = sD;
+            _shieldGameData = sD;
         }
         else
         {
-            _shieldData = new ShieldData();
-            Managers.Game.ShieldLevelDictionary.Add(_id, _shieldData);
+            _shieldGameData = new ShieldGameData();
+            Managers.Game.ShieldLevelDictionary.Add(_id, _shieldGameData);
         }
-        _level = _shieldData.Level;
+        _level = _shieldGameData.Level;
         _totalLevel = _data.LevelDatas.Count - 1;
-
-        if(_shieldData.isCompleted == true || _shieldData.isLocked == true)
-        {
-            GetButton((int)Buttons.BuySquareButton).interactable = false;
-            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.black;
-        }
-        else
-        {
-            GetButton((int)Buttons.BuySquareButton).interactable = true;
-            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.white;
-        }
 
         Refresh();
     }
 
-    void Refresh()
+    public void Refresh()
     {
-        if (Managers.Game.ShieldLevelDictionary[_id].isCompleted == true || Managers.Game.ShieldLevelDictionary[_id].isLocked == true)
+        if (_shieldGameData.isCompleted == true)
         {
-            GetButton((int)Buttons.BuySquareButton).interactable = false;
-            GetButton((int)Buttons.BuySquareButton).GetComponent<Image>().color = Color.black;
+            GetImage((int)Images.LockButtonImage).gameObject.SetActive(false);
+            GetButton((int)Buttons.BuySquareButton).gameObject.SetActive(false);
+        }
+        else if (_shieldGameData.isLocked == true)
+        {
+            // 잠금
+        }
+        else
+        {
+            GetImage((int)Images.LockButtonImage).gameObject.SetActive(false);
         }
 
         GetText((int)Texts.TitleText).text = _data.TitleText;
         // TODO 수치 입력하기
 
         GetText((int)Texts.ATKStatText).text = _data.LevelDatas[_level].LValue.ToString(); ;
-        
-        
+
         if (_level == _totalLevel)
         {
             GetText((int)Texts.PlusText).gameObject.SetActive(false);
@@ -116,7 +116,7 @@ public class UI_ShieldItem : UI_Base
         else
         {
             GetText((int)Texts.PlusText).gameObject.SetActive(true);
-            GetText((int)Texts.PlusNumText).text = (_data.LevelDatas[_level + 1].LValue - _data.LevelDatas[_level].LValue).ToString();
+            GetText((int)Texts.PlusNumText).text = _data.LevelDatas[_level].LValue.ToString();
         }
         _buyCost = _data.LevelDatas[_level].NextCost;
         GetText((int)Texts.BuyCostText).text = _buyCost.ToString();
@@ -126,22 +126,21 @@ public class UI_ShieldItem : UI_Base
         if (_level + 1 <= _totalLevel)
         {
             _level += 1;
-            _shieldData.Level = _level;
-            Managers.Game.ContinueInfo.Atk = _data.LevelDatas[_level].LValue;
+            _shieldGameData.Level = _level;
+            Managers.Game.ContinueInfo.ShiAtk += _data.LevelDatas[_level].LValue;
         }
         else
         {
-            Data.ShieldData nextData = Managers.Data.ShieldDic[_id + 1];
-            Managers.Game.ContinueInfo.Atk = nextData.LevelDatas[0].LValue;
-            Managers.Game.ShieldLevelDictionary[_id].isCompleted = true;
+            Managers.Game.ContinueInfo.ShiAtk += _data.LevelDatas[_level].LValue;
+            _shieldGameData.isCompleted = true;
+            Managers.Game.ShieldLevelDictionary[_id + 1].isLocked = false;
+            _action?.Invoke();
         }
         Refresh();
     }
 
     void OnClickBuySquareButton()
     {
-        if (Managers.Game.ShieldLevelDictionary[_id].isCompleted == true || Managers.Game.ShieldLevelDictionary[_id].isLocked == true)
-            return;
         if (Managers.Game.Gold < _buyCost)
         {
             print("재화가 부족합니다.");

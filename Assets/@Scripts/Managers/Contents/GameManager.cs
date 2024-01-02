@@ -28,8 +28,10 @@ public class GameData
     public ContinueData ContinueInfo = new ContinueData();
     public MoneyBonusData MoneyBonusInfo = new MoneyBonusData();
     public Dictionary<int, int> JewelDictionary = new Dictionary<int, int>(); // <ID, 갯수>
-    public Dictionary<int, LevelData> AccLevelDictionary = new Dictionary<int, LevelData>();
-    public Dictionary<int, ShieldData> ShieldLevelDictionary = new Dictionary<int, ShieldData>();
+    public Dictionary<int, ShieldGameData> ShieldLevelDictionary = new Dictionary<int, ShieldGameData>();
+    public Dictionary<int, SaviourGameData> SaviourLevelDictionary = new Dictionary<int, SaviourGameData>();
+    public Dictionary<int, AccessoriesGameData> AccessoriesLevelDictionary = new Dictionary<int, AccessoriesGameData>();
+    public Dictionary<int, FriendGameData> FriendLevelDictionary = new Dictionary<int, FriendGameData>();
     //TODO EquipDictionary, FriendDictionary, ShieldDictionary, SaviourDicitonary, 
 }
 
@@ -40,24 +42,23 @@ public class ContinueData
     public bool IsContinue { get { return PlayerDataID != 0; } }
     public float Hp;
     public float MaxHp;
-    public float MaxHpBonus;
-    public float Atk;
-    public float AtkBonus;
+    public float Atk { get { return ShiAtk + AccAtk; } }
+    public float ShiAtk;
+    public float AccAtk;
     public float MoveSpeed;
-    public float MoveSpeedBonus;
     public float AtkRate;
-    public float AtkRateBonus;
     public float CriDamage;
-    public float CriDamageBonus;
     public float CriRate;
-    public float CriRateBonus;
     public int Level;
     public float Exp;
     public float TotalExp;
     public float KillGold;
-    public float KillGoldBonus;
     public float WaitGold;
-    public float WaitGoldBonus;
+    public float SaveSale;
+    public float ShieldSale;
+    public float ManaGetRate;
+    public float DEnergyGetRate;
+    public float RubyGetRate;
 
 
     public void Clear()
@@ -65,24 +66,22 @@ public class ContinueData
         PlayerDataID = 0;
         Hp = 0f;
         MaxHp = 0f;
-        MaxHpBonus = 1f;
-        Atk = 0f;
-        AtkBonus = 1f;
+        ShiAtk = 1f;
+        AccAtk = 0f;
         MoveSpeed = 0f;
-        MoveSpeedBonus = 1f;
-        AtkRate = 0.1f;
-        AtkRateBonus = 1f;
+        AtkRate = 1f;
         CriDamage = 1f;
-        CriDamageBonus = 1f;
         CriRate = 0f;
-        CriRateBonus = 1f;
         Level = 1;
         Exp = 0f;
         TotalExp = 0f;
         KillGold = 1f;
-        KillGoldBonus = 1f;
         WaitGold = 0f;
-        WaitGoldBonus = 1f;
+        SaveSale = 0f;
+        ShieldSale = 0f;
+        ManaGetRate = 1f;
+        DEnergyGetRate = 1f;
+        RubyGetRate = 1f;
     }
 }
 [Serializable]
@@ -93,18 +92,36 @@ public class MoneyBonusData
     public float KillDimensionEnergyBonus = 1f;
 }
 [Serializable]
-public class LevelData
-{
-    public bool isOpen = true;
-    public int Level = 0;
-    public int Value = 0;
-}
-[Serializable]
-public class ShieldData
+public class ShieldGameData
 {
     public int Level = 0;
     public bool isCompleted = false;
-    public bool isLocked = false;
+    public bool isLocked = true;
+}
+[Serializable]
+public class SaviourGameData
+{
+    public int Level = 0;
+    public int ExLevel = 0;
+    public int LValue = 0;
+    public int BuyGold = 0;
+    public bool isLocked = true;
+}
+[Serializable]
+public class AccessoriesGameData
+{
+    public int Level = 0;
+    public int LValue = 0;
+    public int BuyGold = 0;
+    public bool isLocked = true;
+}
+[Serializable]
+public class FriendGameData
+{
+    public int Level = 0;
+    public int LValue = 0;
+    public int BuyCost = 0;
+    public bool isLocked = true;
 }
 
 public class GameManager
@@ -190,17 +207,26 @@ public class GameManager
         get { return _gameData.JewelDictionary; }
         set { _gameData.JewelDictionary = value; }
     }
-    public Dictionary<int, LevelData> AccLevelDictionary
-    {
-        get { return _gameData.AccLevelDictionary; }
-        set { _gameData.AccLevelDictionary = value; }
-    }
-    public Dictionary<int, ShieldData> ShieldLevelDictionary
+    public Dictionary<int, ShieldGameData> ShieldLevelDictionary
     {
         get { return _gameData.ShieldLevelDictionary; }
         set { _gameData.ShieldLevelDictionary = value; }
     }
-
+    public Dictionary<int, SaviourGameData> SaviourLevelDictionary
+    {
+        get { return _gameData.SaviourLevelDictionary; }
+        set { _gameData.SaviourLevelDictionary = value; }
+    }
+    public Dictionary<int, AccessoriesGameData> AccessoriesLevelDictionary
+    {
+        get { return _gameData.AccessoriesLevelDictionary; }
+        set { _gameData.AccessoriesLevelDictionary = value; }
+    }
+    public Dictionary<int, FriendGameData> FriendLevelDictionary
+    {
+        get { return _gameData.FriendLevelDictionary; }
+        set { _gameData.FriendLevelDictionary = value; }
+    }
 
     #region Action
     public event Action OnResourcesChanged;
@@ -249,6 +275,9 @@ public class GameManager
     {
         _path = Application.persistentDataPath + "/" + UserName + ".json";
         _gameData = new GameData();
+        ContinueInfo.Clear();
+        ShieldLevelDictionary.Add(10001, new ShieldGameData() { Level = 0, isCompleted = false, isLocked = false });
+        SaviourLevelDictionary.Add(10001, new SaviourGameData() { Level = 0, ExLevel = 0, isLocked = false, LValue = 0 });
         SaveGame();
     }
 

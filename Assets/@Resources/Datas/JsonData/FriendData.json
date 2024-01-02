@@ -4,109 +4,229 @@
             "DataId": 10001,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10002,
             "TitleText": "빠른친구",
             "ItemEffectText": "공격 속도",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10003,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10004,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_10.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10005,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10006,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10007,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10008,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10009,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10010,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10011,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         },
         {
             "DataId": 10012,
             "TitleText": "일반친구",
             "ItemEffectText": "공격력",
-            "MaxLevel": 50,
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby"
+            "BuyResource": "Ruby",
+            "LevelDatas": [
+                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 1, "LValue":2, "NextCost": 6},
+                { "Level": 2, "LValue":3, "NextCost": 9},
+                { "Level": 3, "LValue":4, "NextCost": 12},
+                { "Level": 4, "LValue":5, "NextCost": 15},
+                { "Level": 5, "LValue":6, "NextCost": 18},
+                { "Level": 6, "LValue":7, "NextCost": 21},
+                { "Level": 7, "LValue":8, "NextCost": 24},
+                { "Level": 8, "LValue":9, "NextCost": 270}
+            ]
         }
     ]
 }

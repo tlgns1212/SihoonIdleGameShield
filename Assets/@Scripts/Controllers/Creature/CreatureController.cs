@@ -94,9 +94,9 @@ public class CreatureController : BaseController
         PlayerController player = attacker as PlayerController;
         if (player != null)
         {
-            if (UnityEngine.Random.value <= (player.CriRate + player.CriRateBonus))
+            if (UnityEngine.Random.value <= player.CriRate)
             {
-                damage = damage * (player.CriDamage + player.CriDamageBonus);
+                damage = damage * player.CriDamage;
                 isCritical = true;
             }
         }

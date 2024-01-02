@@ -16,6 +16,7 @@ public class UI_FriendPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_FriendItem> _items = new List<UI_FriendItem>();
 
     private void Awake()
     {
@@ -40,7 +41,14 @@ public class UI_FriendPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_FriendItem ai = Managers.UI.MakeSubItem<UI_FriendItem>(GetObject((int)GameObjects.FriendItem).transform);
-            ai.SetInfo(10001 + i, _scrollRect);
+            _items.Add(ai);
+            ai.SetInfo(10001 + i, _scrollRect, () =>
+            {
+                foreach (UI_FriendItem item in _items)
+                {
+                    item.Refresh();
+                }
+            });
         }
 
         return true;

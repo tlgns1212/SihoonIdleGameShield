@@ -23,6 +23,7 @@ public class UI_JewelPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_JewelItem> _items = new List<UI_JewelItem>();
 
     private void Awake()
     {
@@ -47,7 +48,14 @@ public class UI_JewelPopup : UI_Popup
         for (int i = 0; i < 40; i++)
         {
             UI_JewelItem ji = Managers.UI.MakeSubItem<UI_JewelItem>(GetObject((int)GameObjects.JewelContent).transform);
-            ji.SetInfo(10001 + i, _scrollRect);
+            _items.Add(ji);
+            ji.SetInfo(10001 + i, _scrollRect, () =>
+            {
+                foreach (UI_JewelItem item in _items)
+                {
+                    item.Refresh();
+                }
+            });
         }
 
         return true;

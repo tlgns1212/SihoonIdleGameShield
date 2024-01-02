@@ -16,6 +16,7 @@ public class UI_DungeonPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_DungeonItem> _items = new List<UI_DungeonItem>();
 
     private void Awake()
     {
@@ -40,7 +41,14 @@ public class UI_DungeonPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_DungeonItem di = Managers.UI.MakeSubItem<UI_DungeonItem>(GetObject((int)GameObjects.DungeonItem).transform);
-            di.SetInfo(10001 + i, _scrollRect);
+            _items.Add(di);
+            di.SetInfo(10001 + i, _scrollRect, () =>
+            {
+                foreach (UI_DungeonItem item in _items)
+                {
+                    item.Refresh();
+                }
+            });
         }
 
         return true;

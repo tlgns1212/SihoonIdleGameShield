@@ -62,6 +62,22 @@ public class Define
         MaxAccessoriesItem
     }
 
+    public enum AccessoriesItemType
+    {
+        AtkDamage,
+        AtkRate,
+        MoveSpeed,
+        CriticalDamage,
+        CriticalRate,
+        KillGoldRate,
+        SaveGoldRate,
+        ManaGetRate,
+        DEnergyGetRate,
+        RubyGetRate,
+        ShieldSaleRate,
+        SaveSaleRate
+    }
+
     public enum ResourceType
     {
         Gold,

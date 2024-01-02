@@ -16,6 +16,7 @@ public class UI_SaviourPopup : UI_Popup
     #endregion
 
     ScrollRect _scrollRect;
+    List<UI_SaviourItem> _items = new List<UI_SaviourItem>();
 
     private void Awake()
     {
@@ -40,7 +41,14 @@ public class UI_SaviourPopup : UI_Popup
         for (int i = 0; i < 12; i++)
         {
             UI_SaviourItem si = Managers.UI.MakeSubItem<UI_SaviourItem>(GetObject((int)GameObjects.SaviourItem).transform);
-            si.SetInfo(10001 + i, _scrollRect);
+            _items.Add(si);
+            si.SetInfo(10001 + i, _scrollRect, () =>
+            {
+                foreach (UI_SaviourItem item in _items)
+                {
+                    item.Refresh();
+                }
+            });
         }
 
         return true;
