@@ -289,6 +289,10 @@ public class UI_GameScene : UI_Scene
         // TODO Temp임시로 게임 초기화로 해 놓았음
         Managers.Game.RefreshGame();
         Managers.Game.Gold = 100000;
+        Managers.Game.Mana = 100000;
+        Managers.Game.DimensionEnergy = 100000;
+        Managers.Game.Ruby = 100000;
+
     }
 
     void Awake()

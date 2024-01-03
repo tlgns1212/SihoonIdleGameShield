@@ -20,6 +20,7 @@ public class UI_ShieldItem : UI_Base
     {
         TitleText,
         ATKText,
+        LvText,
         ATKStatText,
         PlusNumText,
         BuyCostText,
@@ -64,12 +65,14 @@ public class UI_ShieldItem : UI_Base
 
     public void SetInfo(int shieldID, ScrollRect scrollRect, Action callback)
     {
+        // TODO ShieldData 수치조정 하면 됨
         _id = shieldID;
         _data = Managers.Data.ShieldDic[shieldID];
         _scrollRect = scrollRect;
         _action = callback;
 
         GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
+        GetText((int)Texts.TitleText).text = _data.TitleText;
         GetText((int)Texts.ATKText).text = _data.ItemEffectText;
 
         if (Managers.Game.ShieldLevelDictionary.TryGetValue(_id, out ShieldGameData sD))
@@ -103,33 +106,26 @@ public class UI_ShieldItem : UI_Base
             GetImage((int)Images.LockButtonImage).gameObject.SetActive(false);
         }
 
-        GetText((int)Texts.TitleText).text = _data.TitleText;
-        GetText((int)Texts.ATKStatText).text = _data.LevelDatas[_level].LValue.ToString(); ;
+        GetText((int)Texts.LvText).text = $"LV.{_level} (MAX{_totalLevel})";
+        GetText((int)Texts.ATKStatText).text = _shieldGameData.LValue.ToString();
+        GetText((int)Texts.PlusText).gameObject.SetActive(true);
+        GetText((int)Texts.PlusNumText).text = _data.LevelDatas[_level].LValue.ToString();
 
-        if (_level == _totalLevel)
-        {
-            GetText((int)Texts.PlusText).gameObject.SetActive(false);
-            GetText((int)Texts.PlusNumText).text = "다음 무기 열기";
-        }
-        else
-        {
-            GetText((int)Texts.PlusText).gameObject.SetActive(true);
-            GetText((int)Texts.PlusNumText).text = _data.LevelDatas[_level].LValue.ToString();
-        }
         _buyCost = _data.LevelDatas[_level].NextCost;
         GetText((int)Texts.BuyCostText).text = _buyCost.ToString();
     }
     void LevelUp()
     {
-        if (_level + 1 <= _totalLevel)
+        if (_level + 2 <= _totalLevel)
         {
             _level += 1;
             _shieldGameData.Level = _level;
-            Managers.Game.ContinueInfo.ShiAtk += _data.LevelDatas[_level].LValue;
+            Managers.Game.ContinueInfo.ShiAtk = _shieldGameData.LValue += _data.LevelDatas[_level].LValue;
         }
         else
         {
-            Managers.Game.ContinueInfo.ShiAtk += _data.LevelDatas[_level].LValue;
+            _level += 1;
+            Managers.Game.ContinueInfo.ShiAtk = _shieldGameData.LValue += _data.LevelDatas[_level].LValue;
             _shieldGameData.isCompleted = true;
             Managers.Game.ShieldLevelDictionary[_id + 1].isLocked = false;
             _action?.Invoke();

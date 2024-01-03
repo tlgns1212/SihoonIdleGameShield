@@ -38,6 +38,7 @@ public class UI_NoMaxAccessoriesItem : UI_Base
     string _itemEffectString;
     Data.AccessoriesData _data;
     AccessoriesGameData _accessoriesGameData;
+    Define.ResourceType _buyResource = Define.ResourceType.Gold;
     int _levelIndex = 0;
 
     // TODO RaiseGoldCost, RaiseLValue, 등등 여기에 들어가는 것들을 프로퍼티로 만들어서 두번 작업하지 않고 한번에 되게 하기
@@ -79,10 +80,38 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         }
         else
         {
-            _accessoriesGameData = new AccessoriesGameData();
+            // 기본적인 악세서리는 다 잠금 풀린 상태로 존재
+            if (accessoriesID >= 10001 || accessoriesID <= 10012)
+                _accessoriesGameData = new AccessoriesGameData() { isLocked = false, LValue = _data.LevelDatas[0].LValue, BuyCost = _data.LevelDatas[0].NextCost };
+            else
+                _accessoriesGameData = new AccessoriesGameData();
             Managers.Game.AccessoriesLevelDictionary.Add(accessoriesID, _accessoriesGameData);
         }
+        if (_accessoriesGameData.isLocked == false)
+        {
+            GetButton((int)Buttons.LockButton).gameObject.SetActive(false);
+        }
 
+        if (_data.BuyResource == "Mana")
+        {
+            _buyResource = Define.ResourceType.Mana;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_26");
+        }
+        else if (_data.BuyResource == "DEnergy")
+        {
+            _buyResource = Define.ResourceType.DimensionEnergy;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_25");
+        }
+        else if (_data.BuyResource == "Ruby")
+        {
+            _buyResource = Define.ResourceType.Ruby;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_22");
+        }
+        else
+        {
+            _buyResource = Define.ResourceType.Gold;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_21");
+        }
 
 
         Refresh();
@@ -90,9 +119,11 @@ public class UI_NoMaxAccessoriesItem : UI_Base
 
     public void LevelUp(int levelPlus = 1)
     {
-        _accessoriesGameData.LValue += GetLValue();
-        _accessoriesGameData.BuyGold += GetCost();
+        MakeLevelIndex();
         _accessoriesGameData.Level += levelPlus;
+        _accessoriesGameData.LValue += GetLValue();
+        _accessoriesGameData.BuyCost = GetCost();
+
 
         Refresh();
     }
@@ -140,7 +171,7 @@ public class UI_NoMaxAccessoriesItem : UI_Base
     {
         _accessoriesGameData.isLocked = false;
         _accessoriesGameData.LValue = _data.LevelDatas[0].LValue;
-        _accessoriesGameData.BuyGold = _data.LevelDatas[0].NextCost;
+        _accessoriesGameData.BuyCost = _data.LevelDatas[0].NextCost;
 
         if (_accessoriesGameData.isLocked == false)
         {
@@ -151,10 +182,36 @@ public class UI_NoMaxAccessoriesItem : UI_Base
 
     void OnClickBuySquareButton()
     {
-        if (Managers.Game.Gold >= _accessoriesGameData.BuyGold)
+        switch (_buyResource)
         {
-            Managers.Game.Gold -= _accessoriesGameData.BuyGold;
-            LevelUp();
+            case Define.ResourceType.Mana:
+                if (Managers.Game.Mana >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Mana -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            case Define.ResourceType.DimensionEnergy:
+                if (Managers.Game.DimensionEnergy >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.DimensionEnergy -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            case Define.ResourceType.Ruby:
+                if (Managers.Game.Ruby >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Ruby -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            default:
+                if (Managers.Game.Gold >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Gold -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
         }
     }
 
@@ -164,13 +221,13 @@ public class UI_NoMaxAccessoriesItem : UI_Base
         {
             if (_levelIndex >= _data.RaiseLevelDatas.Count - 1)
                 break;
-            if (_data.RaiseLevelDatas[_levelIndex].Level > _accessoriesGameData.Level)
+            if (_data.RaiseLevelDatas[_levelIndex + 1].Level > _accessoriesGameData.Level)
                 break;
             _levelIndex++;
         }
     }
 
-    int GetLValue() 
+    int GetLValue()
     {
         return _data.RaiseLevelDatas[_levelIndex].LValue;
     }

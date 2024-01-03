@@ -8,12 +8,13 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1,"NextCost": 3},
+                { "Level":10, "LValue":3,"NextCost": 10},
                 { "Level":100, "LValue":10, "NextCost": 30},
                 { "Level":10000, "LValue":100, "NextCost": 300},
                 { "Level":100000, "LValue":1000, "NextCost": 3000}
@@ -27,9 +28,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":10, "NextCost": 3},
+                { "Level": 0, "LValue":0, "NextCost": 3},
                 { "Level": 1, "LValue":20, "NextCost": 6},
                 { "Level": 2, "LValue":30, "NextCost": 9},
                 { "Level": 3, "LValue":40, "NextCost": 12},
@@ -70,9 +71,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":3, "NextCost": 3},
+                { "Level": 0, "LValue":0, "NextCost": 3},
                 { "Level": 1, "LValue":6, "NextCost": 3},
                 { "Level": 2, "LValue":9, "NextCost": 3},
                 { "Level": 3, "LValue":12, "NextCost": 3},
@@ -92,9 +93,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_10.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -111,9 +112,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3},
+                { "Level": 0, "LValue":0, "NextCost": 3},
                 { "Level": 1, "LValue":2, "NextCost": 3},
                 { "Level": 2, "LValue":3, "NextCost": 3},
                 { "Level": 3, "LValue":4, "NextCost": 3},
@@ -164,9 +165,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_14.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -183,9 +184,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "NoMaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Gold",
+            "BuyResource": "Mana",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -204,7 +205,7 @@
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Ruby",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -223,7 +224,7 @@
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Ruby",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -242,7 +243,7 @@
             "IconLabel": "icons_12.sprite",
             "BuyResource": "Ruby",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3}
+                { "Level": 0, "LValue":0, "NextCost": 3}
             ],
             "RaiseLevelDatas":[
                 { "Level":0, "LValue":1, "NextCost": 3},
@@ -259,9 +260,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby",
+            "BuyResource": "DEnergy",
             "LevelDatas": [
-                { "Level": 0, "LValue":5, "NextCost": 3},
+                { "Level": 0, "LValue":0, "NextCost": 3},
                 { "Level": 1, "LValue":10, "NextCost": 3},
                 { "Level": 2, "LValue":15, "NextCost": 3},
                 { "Level": 3, "LValue":20, "NextCost": 3},
@@ -282,9 +283,9 @@
             "ItemEffectNumText": "단계",
             "PrefabLabel": "MaxAccessoriesItem",
             "IconLabel": "icons_12.sprite",
-            "BuyResource": "Ruby",
+            "BuyResource": "DEnergy",
             "LevelDatas": [
-                { "Level": 0, "LValue":5, "NextCost": 3},
+                { "Level": 0, "LValue":0, "NextCost": 3},
                 { "Level": 1, "LValue":10, "NextCost": 3},
                 { "Level": 2, "LValue":15, "NextCost": 3},
                 { "Level": 3, "LValue":20, "NextCost": 3},

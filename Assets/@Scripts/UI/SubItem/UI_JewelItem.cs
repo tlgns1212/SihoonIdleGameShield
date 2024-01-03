@@ -11,12 +11,22 @@ public class UI_JewelItem : UI_Base
     enum Images
     {
         JewelImage,
-        GradeImage,
+        IsUsedImage,
+    }
+
+    enum Texts
+    {
+        GradeText,
     }
 
     #endregion
 
+    int _id;
+    int _dataID;
     ScrollRect _scrollRect;
+    Data.JewelData _data;
+    JewelGameData _jewelGameData;
+    UI_JewelPopup _parent;
     bool _isDrag = false;
     Action _action;
 
@@ -30,21 +40,33 @@ public class UI_JewelItem : UI_Base
             return false;
 
         BindImage(typeof(Images));
+        BindText(typeof(Texts));
+
+        gameObject.BindEvent(OnClickJewelItem);
 
         Refresh();
 
         return true;
     }
 
-    public void SetInfo(int jewelID, ScrollRect scrollRect, Action callback)
+    public void SetInfo(JewelGameData jgd, UI_JewelPopup parent, ScrollRect scrollRect, Action callback)
     {
+        _id = jgd.ID;
+        _parent = parent;
+        _dataID = jgd.DataID;
+        _jewelGameData = jgd;
         _scrollRect = scrollRect;
         _action = callback;
-        Data.JewelData data = Managers.Data.JewelDic[jewelID];
+        _data = Managers.Data.JewelDic[jgd.DataID];
 
-        GetImage((int)Images.JewelImage).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
-        // TODO Grade 메기기
-        // GetImage((int)Images.GradeImage).sprite =
+        GetImage((int)Images.JewelImage).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
+        GetText((int)Texts.GradeText).text = _data.Grade;
+
+
+        if (_jewelGameData.isUsed == false)
+        {
+            GetImage((int)Images.IsUsedImage).gameObject.SetActive(false);
+        }
 
         Refresh();
     }
@@ -52,6 +74,28 @@ public class UI_JewelItem : UI_Base
     public void Refresh()
     {
 
+    }
+
+    void OnClickJewelItem()
+    {
+        switch (_parent._selectType)
+        {
+            case Define.JewelSelectType.Nothing:
+                // TODO Show Description Popup
+                break;
+            case Define.JewelSelectType.Assemble:
+                // TODO Click And check and go Up
+                break;
+            case Define.JewelSelectType.Disassemble:
+                // TODO Click and check and show sepate two
+                break;
+            case Define.JewelSelectType.Sell:
+                // TODO Click and check all
+                break;
+            case Define.JewelSelectType.Sort:
+                // TODO No Click
+                break;
+        }
     }
 
     #region 버튼 스크롤 대응

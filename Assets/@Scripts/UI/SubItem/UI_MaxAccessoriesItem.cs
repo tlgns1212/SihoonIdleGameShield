@@ -39,6 +39,7 @@ public class UI_MaxAccessoriesItem : UI_Base
     AccessoriesGameData _accessoriesGameData;
     Data.AccessoriesData _data;
     int _levelIndex = 0;
+    Define.ResourceType _buyResource = Define.ResourceType.Mana;
 
     private void Awake()
     {
@@ -76,7 +77,11 @@ public class UI_MaxAccessoriesItem : UI_Base
         }
         else
         {
-            _accessoriesGameData = new AccessoriesGameData();
+            // 기본적인 악세서리는 다 잠금 풀린 상태로 존재
+            if (accessoriesID >= 10001 || accessoriesID <= 10012)
+                _accessoriesGameData = new AccessoriesGameData() { isLocked = false, LValue = _data.LevelDatas[0].LValue, BuyCost = _data.LevelDatas[0].NextCost };
+            else
+                _accessoriesGameData = new AccessoriesGameData();
             Managers.Game.AccessoriesLevelDictionary.Add(accessoriesID, _accessoriesGameData);
         }
         if (_accessoriesGameData.Level >= _data.LevelDatas.Count - 1)
@@ -88,6 +93,27 @@ public class UI_MaxAccessoriesItem : UI_Base
             GetButton((int)Buttons.LockButton).gameObject.SetActive(false);
         }
 
+        if (_data.BuyResource == "Mana")
+        {
+            _buyResource = Define.ResourceType.Mana;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_26");
+        }
+        else if (_data.BuyResource == "DEnergy")
+        {
+            _buyResource = Define.ResourceType.DimensionEnergy;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_25");
+        }
+        else if (_data.BuyResource == "Ruby")
+        {
+            _buyResource = Define.ResourceType.Ruby;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_22");
+        }
+        else
+        {
+            _buyResource = Define.ResourceType.Gold;
+            GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_21");
+        }
+
         Refresh();
     }
 
@@ -95,8 +121,8 @@ public class UI_MaxAccessoriesItem : UI_Base
     {
         int maxLevel = _data.LevelDatas.Count;
         GetText((int)Texts.LvText).text = $"LV{_accessoriesGameData.Level}(MAX{maxLevel})";
-        GetText((int)Texts.DescriptionText).text = $"{_itemEffectString} 단계 증가";
-        GetText((int)Texts.ItemEffectText).text = $"{_accessoriesGameData.LValue}{_data.ItemEffectNumText}";
+        GetText((int)Texts.DescriptionText).text = $"{_itemEffectString} 증가";
+        GetText((int)Texts.ItemEffectText).text = $"{_accessoriesGameData.LValue}%";
         GetText((int)Texts.PlusNumText).text = GetLValue().ToString();
         GetText((int)Texts.BuyCostText).text = GetCost().ToString();
 
@@ -107,7 +133,7 @@ public class UI_MaxAccessoriesItem : UI_Base
     {
         _accessoriesGameData.isLocked = false;
         _accessoriesGameData.LValue = _data.LevelDatas[0].LValue;
-        _accessoriesGameData.BuyGold = _data.LevelDatas[0].NextCost;
+        _accessoriesGameData.BuyCost = _data.LevelDatas[0].NextCost;
         _accessoriesGameData.Level = _data.LevelDatas[0].Level;
 
         if (_accessoriesGameData.isLocked == false)
@@ -125,9 +151,9 @@ public class UI_MaxAccessoriesItem : UI_Base
             return;
         }
 
-        _accessoriesGameData.LValue = GetLValue();
-        _accessoriesGameData.BuyGold = GetCost();
         _accessoriesGameData.Level += levelPlus;
+        _accessoriesGameData.LValue = GetLValue();
+        _accessoriesGameData.BuyCost = GetCost();
 
         Refresh();
     }
@@ -143,13 +169,12 @@ public class UI_MaxAccessoriesItem : UI_Base
                 break;
             case Define.AccessoriesItemType.CriticalRate:
                 Managers.Game.ContinueInfo.AccCriRate = _accessoriesGameData.LValue / 100.0f;
-                print(Managers.Game.ContinueInfo.CriRate);
                 break;
             case Define.AccessoriesItemType.MoveSpeed:
                 Managers.Game.ContinueInfo.AccMoveSpeed = _accessoriesGameData.LValue;
                 Managers.Game.Player.ChangeAnimSpeed();
                 break;
-                // TODO 할인율 이거 일단 놨뒀음 나중에 할것!
+            // TODO 할인율 이거 일단 놨뒀음 나중에 할것!
             case Define.AccessoriesItemType.SaveSaleRate:
                 Managers.Game.ContinueInfo.AccSaveSale = _accessoriesGameData.LValue / 100.0f;
                 break;
@@ -161,10 +186,36 @@ public class UI_MaxAccessoriesItem : UI_Base
 
     void OnClickBuySquareButton()
     {
-        if (Managers.Game.Gold >= _accessoriesGameData.BuyGold)
+        switch (_buyResource)
         {
-            Managers.Game.Gold -= _accessoriesGameData.BuyGold;
-            LevelUp();
+            case Define.ResourceType.Mana:
+                if (Managers.Game.Mana >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Mana -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            case Define.ResourceType.DimensionEnergy:
+                if (Managers.Game.DimensionEnergy >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.DimensionEnergy -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            case Define.ResourceType.Ruby:
+                if (Managers.Game.Ruby >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Ruby -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
+            default:
+                if (Managers.Game.Gold >= _accessoriesGameData.BuyCost)
+                {
+                    Managers.Game.Gold -= _accessoriesGameData.BuyCost;
+                    LevelUp();
+                }
+                break;
         }
     }
 

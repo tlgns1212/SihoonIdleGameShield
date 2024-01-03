@@ -99,17 +99,19 @@ public class UI_SaviourItem : UI_Base
         GetText((int)Texts.PlusGoldText).text = _saviourGameData.LValue.ToString();
         GetText((int)Texts.PlusNumText).text = _data.LevelDatas[0].LValue.ToString();
         GetText((int)Texts.BuyCostText).text = _saviourGameData.BuyGold.ToString();
-
     }
 
     private void Update()
     {
         if (_saviourGameData.isLocked)
             return;
+        if (_saviourGameData.Level <= 0)
+            return;
 
         _lastRewardTime += Time.deltaTime;
 
         float percentage = _lastRewardTime / _data.TotalTime;
+        float timeLeft = _data.TotalTime - _lastRewardTime;
         if (percentage >= 1)
         {
             _lastRewardTime = 0;
@@ -117,6 +119,7 @@ public class UI_SaviourItem : UI_Base
         }
 
         GetImage((int)Images.ProgressBarFill).fillAmount = percentage;
+        GetText((int)Texts.ProgressTimeText).text = $"{(int)(timeLeft / 3600):D2}:{(int)(timeLeft / 60 % 60):D2}:{(int)(timeLeft % 60):D2}";
     }
 
     void OnClickLockButton()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 837203149609270076}
   - component: {fileID: 3435229217114507941}
   - component: {fileID: 4719361752959654922}
-  - component: {fileID: 6903876335341364684}
+  - component: {fileID: 7124674219953666702}
   m_Layer: 5
   m_Name: JewelSort
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6903876335341364684
+--- !u!114 &7124674219953666702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 86669767482868020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -118,9 +118,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4719361752959654922}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 9153451726861311609}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0
 --- !u!1 &1529651292383160101
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +136,7 @@ GameObject:
   - component: {fileID: 1230711869429437927}
   - component: {fileID: 8071344463954096684}
   - component: {fileID: 181378479528940190}
-  - component: {fileID: 5457061760352843339}
+  - component: {fileID: 6100810107529644111}
   m_Layer: 5
   m_Name: JewelAssemble
   m_TagString: Untagged
@@ -198,7 +202,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5457061760352843339
+--- !u!114 &6100810107529644111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1529651292383160101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -239,9 +243,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 181378479528940190}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 9153451726861311609}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0
 --- !u!1 &1869150534992581161
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +734,7 @@ GameObject:
   - component: {fileID: 7952316173115541776}
   - component: {fileID: 6484892140568950400}
   - component: {fileID: 1292154185059996038}
-  - component: {fileID: 3882643095580355289}
+  - component: {fileID: 8645659955458044555}
   m_Layer: 5
   m_Name: JewelDisassemble
   m_TagString: Untagged
@@ -792,7 +800,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3882643095580355289
+--- !u!114 &8645659955458044555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,7 +809,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5487249701394922881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -833,9 +841,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1292154185059996038}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 9153451726861311609}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0
 --- !u!1 &5676616725232593261
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,8 +996,9 @@ GameObject:
   - component: {fileID: 3514953234447581862}
   - component: {fileID: 6026984641108688000}
   - component: {fileID: 4915028015405603618}
+  - component: {fileID: 9153451726861311609}
   m_Layer: 5
-  m_Name: ButtonGroup
+  m_Name: ToggleGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,6 +1091,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &9153451726861311609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754224402390717155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 1
 --- !u!1 &7026117595708780589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1249,7 @@ GameObject:
   - component: {fileID: 3934930457231693314}
   - component: {fileID: 2322539016640010597}
   - component: {fileID: 5535877693533709808}
-  - component: {fileID: 7625556638265465906}
+  - component: {fileID: 4231979443622546761}
   m_Layer: 5
   m_Name: JewelSell
   m_TagString: Untagged
@@ -1289,7 +1315,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7625556638265465906
+--- !u!114 &4231979443622546761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1298,7 +1324,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7109672981871319485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1330,9 +1356,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 5535877693533709808}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 9153451726861311609}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0
 --- !u!1 &7503223975588546225
 GameObject:
   m_ObjectHideFlags: 0

@@ -143,6 +143,7 @@ namespace Data
         public string ItemEffectText;
         public string PrefabLabel;
         public string IconLabel;
+        public int FirstBuyCost;
         public string BuyResource;
         public List<LevelData> LevelDatas = new List<LevelData>();
     }

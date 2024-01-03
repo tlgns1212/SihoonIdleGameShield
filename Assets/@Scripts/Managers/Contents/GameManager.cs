@@ -27,11 +27,12 @@ public class GameData
 
     public ContinueData ContinueInfo = new ContinueData();
     public MoneyBonusData MoneyBonusInfo = new MoneyBonusData();
-    public Dictionary<int, int> JewelDictionary = new Dictionary<int, int>(); // <ID, 갯수>
     public Dictionary<int, ShieldGameData> ShieldLevelDictionary = new Dictionary<int, ShieldGameData>();
     public Dictionary<int, SaviourGameData> SaviourLevelDictionary = new Dictionary<int, SaviourGameData>();
     public Dictionary<int, AccessoriesGameData> AccessoriesLevelDictionary = new Dictionary<int, AccessoriesGameData>();
     public Dictionary<int, FriendGameData> FriendLevelDictionary = new Dictionary<int, FriendGameData>();
+    public List<JewelGameData> JewelLevels = new List<JewelGameData>();
+    public int JewelNewID = 1;
 }
 
 [Serializable]
@@ -48,7 +49,7 @@ public class ContinueData
     public float AccMoveSpeed;
     public float AtkRate { get { return 1 + AccAtkRate; } }
     public float AccAtkRate;
-    public float CriDamage{ get { return AccCriDamage; } }
+    public float CriDamage { get { return AccCriDamage; } }
     public float AccCriDamage;
     public float CriRate { get { return AccCriRate; } }
     public float AccCriRate;
@@ -57,7 +58,7 @@ public class ContinueData
     public float TotalExp;
     public float KillGold { get { return 1 + AccKillGold; } }
     public float AccKillGold;
-    public float WaitGold{ get { return 1 + AccWaitGold; } }
+    public float WaitGold { get { return 1 + AccWaitGold; } }
     public float AccWaitGold;
     public float SaveSale { get { return AccSaveSale; } }
     public float AccSaveSale;
@@ -105,6 +106,7 @@ public class MoneyBonusData
 public class ShieldGameData
 {
     public int Level = 0;
+    public int LValue = 0;
     public bool isCompleted = false;
     public bool isLocked = true;
 }
@@ -122,7 +124,7 @@ public class AccessoriesGameData
 {
     public int Level = 0;
     public int LValue = 0;
-    public int BuyGold = 0;
+    public int BuyCost = 0;
     public bool isLocked = true;
 }
 [Serializable]
@@ -132,6 +134,15 @@ public class FriendGameData
     public int LValue = 0;
     public int BuyCost = 0;
     public bool isLocked = true;
+}
+[Serializable]
+public class JewelGameData
+{
+    public int ID;
+    public int DataID = 10001;
+    public int LValue = 0;
+    public int GradeNum = 0;
+    public bool isUsed = false;
 }
 
 public class GameManager
@@ -192,6 +203,10 @@ public class GameManager
             OnResourcesChanged?.Invoke();
         }
     }
+    public int JewelNewID
+    {
+        get { return _gameData.JewelNewID++; }
+    }
     public int BGMSound
     {
         get { return _gameData.BGMSound; }
@@ -212,11 +227,6 @@ public class GameManager
         get { return _gameData.MoneyBonusInfo; }
         set { _gameData.MoneyBonusInfo = value; }
     }
-    public Dictionary<int, int> JewelDictionary
-    {
-        get { return _gameData.JewelDictionary; }
-        set { _gameData.JewelDictionary = value; }
-    }
     public Dictionary<int, ShieldGameData> ShieldLevelDictionary
     {
         get { return _gameData.ShieldLevelDictionary; }
@@ -236,6 +246,11 @@ public class GameManager
     {
         get { return _gameData.FriendLevelDictionary; }
         set { _gameData.FriendLevelDictionary = value; }
+    }
+    public List<JewelGameData> JewelLevels
+    {
+        get { return _gameData.JewelLevels; }
+        set { _gameData.JewelLevels = value; }
     }
 
     #region Action

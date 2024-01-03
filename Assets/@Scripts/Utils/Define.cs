@@ -56,6 +56,15 @@ public class Define
         F
     }
 
+    public enum JewelSelectType
+    {
+        Nothing,
+        Assemble,
+        Disassemble,
+        Sell,
+        Sort,
+    }
+
     public enum AccessoriesType
     {
         NoMaxAccessoriesItem,
