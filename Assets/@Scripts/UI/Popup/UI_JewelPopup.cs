@@ -21,6 +21,7 @@ public class UI_JewelPopup : UI_Popup
         JewelSell,
         JewelSort,
     }
+
     #endregion
 
     ScrollRect _scrollRect;
@@ -39,6 +40,7 @@ public class UI_JewelPopup : UI_Popup
             return false;
 
         BindObject(typeof(GameObjects));
+        BindToggle(typeof(Toggles));
 
         _scrollRect = Util.FindChild<ScrollRect>(gameObject);
 
@@ -91,32 +93,45 @@ public class UI_JewelPopup : UI_Popup
 
     void Refresh()
     {
-
-    }
-
-    void OnClickJewels()
-    {
-
+        for (int i = _selectedItems.Count - 1; i >= 0; i--)
+            _selectedItems[i].IsSelected = false;
+        _selectedItems.Clear();
     }
 
     void OnClickJewelAssemble()
     {
-
+        if (_selectType == Define.JewelSelectType.Assemble)
+            _selectType = Define.JewelSelectType.Nothing;
+        else
+            _selectType = Define.JewelSelectType.Assemble;
+        Refresh();
     }
 
     void OnClickJewelDisassemble()
     {
-
+        if (_selectType == Define.JewelSelectType.Disassemble)
+            _selectType = Define.JewelSelectType.Nothing;
+        else
+            _selectType = Define.JewelSelectType.Disassemble;
+        Refresh();
     }
 
     void OnClickJewelSell()
     {
-
+        if (_selectType == Define.JewelSelectType.Sell)
+            _selectType = Define.JewelSelectType.Nothing;
+        else
+            _selectType = Define.JewelSelectType.Sell;
+        Refresh();
     }
 
     void OnClickJewelSort()
     {
-
+        if (_selectType == Define.JewelSelectType.Sort)
+            _selectType = Define.JewelSelectType.Nothing;
+        else
+            _selectType = Define.JewelSelectType.Sort;
+        Refresh();
     }
 
     #region 버튼 스크롤 대응
