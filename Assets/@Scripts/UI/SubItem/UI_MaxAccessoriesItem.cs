@@ -160,7 +160,6 @@ public class UI_MaxAccessoriesItem : UI_Base
 
     void UpdateContinueInfo(Define.AccessoriesItemType itemType)
     {
-        // TODOTODOTODO 기본적인 AtkDamage, AtkRate 이런거 건드리지 않고 AccAtkDamage, AccAtkRAte 이런거 건드린느걸로 바꾸기, 그 이후 이것들 취합해서 AtkRate 구하기
         switch (itemType)
         {
             case Define.AccessoriesItemType.AtkRate:

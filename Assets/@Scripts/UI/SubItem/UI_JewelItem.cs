@@ -25,14 +25,18 @@ public class UI_JewelItem : UI_Base
     int _id;
     int _dataID;
     ScrollRect _scrollRect;
-    Data.JewelData _data;
-    JewelGameData _jewelGameData;
+    public Data.JewelData _data;
+    public JewelGameData _jewelGameData;
     UI_JewelPopup _parent;
     bool _isDrag = false;
-    Action _action;
+    Action _actionRefreshAll;
+    Action _actionUpdateJewel;
     bool _isSelected = false;
-    public bool IsSelected { get { return _isSelected; }
-        set {
+    public bool IsSelected
+    {
+        get { return _isSelected; }
+        set
+        {
             _isSelected = value;
             if (_isSelected)
                 _parent._selectedItems.Add(this);
@@ -58,20 +62,24 @@ public class UI_JewelItem : UI_Base
         BindText(typeof(Texts));
 
         gameObject.BindEvent(OnClickJewelItem);
+        gameObject.BindEvent(null, OnDrag, Define.UIEvent.Drag);
+        gameObject.BindEvent(null, OnBeginDrag, Define.UIEvent.BeginDrag);
+        gameObject.BindEvent(null, OnEndDrag, Define.UIEvent.EndDrag);
 
         Refresh();
 
         return true;
     }
 
-    public void SetInfo(JewelGameData jgd, UI_JewelPopup parent, ScrollRect scrollRect, Action callback)
+    public void SetInfo(JewelGameData jgd, UI_JewelPopup parent, ScrollRect scrollRect, Action refreshAll, Action updateJewel)
     {
         _id = jgd.ID;
         _parent = parent;
         _dataID = jgd.DataID;
         _jewelGameData = jgd;
         _scrollRect = scrollRect;
-        _action = callback;
+        _actionRefreshAll = refreshAll;
+        _actionUpdateJewel = updateJewel;
         _data = Managers.Data.JewelDic[jgd.DataID];
 
         GetImage((int)Images.JewelImage).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
@@ -96,6 +104,8 @@ public class UI_JewelItem : UI_Base
 
     void OnClickJewelItem()
     {
+        if (_isDrag)
+            return;
         switch (_parent._selectType)
         {
             case Define.JewelSelectType.Nothing:
@@ -103,21 +113,30 @@ public class UI_JewelItem : UI_Base
                 break;
             case Define.JewelSelectType.Assemble:
                 // TODO Click And check and go Up
-                if (IsSelected) {
+                if (_jewelGameData.GradeNum == (int)Define.JewelGrade.EX)
+                    return;
+                if (IsSelected)
+                {
                     IsSelected = false;
                 }
-                else if(_parent._selectedItems.Count >= 1)
+                else if (_parent._selectedItems.Count == 1)
                 {
-                    _parent._selectedItems[0].IsSelected = false;
-                    _parent._selectedItems.Clear();
                     IsSelected = true;
-                    _action?.Invoke();
+                    // TODO Sort
+                }
+                else if (_parent._selectedItems.Count == 2)
+                {
+                    _parent._selectedItems[1].IsSelected = false;
+                    IsSelected = true;
+                    _actionRefreshAll?.Invoke();
                 }
                 else
                     IsSelected = true;
+                _actionUpdateJewel?.Invoke();
                 break;
             case Define.JewelSelectType.Disassemble:
-                // TODO Click and check and show sepate two
+                if (_jewelGameData.GradeNum == (int)Define.JewelGrade.F)
+                    return;
                 if (IsSelected)
                 {
                     IsSelected = false;
@@ -127,10 +146,11 @@ public class UI_JewelItem : UI_Base
                     _parent._selectedItems[0].IsSelected = false;
                     _parent._selectedItems.Clear();
                     IsSelected = true;
-                    _action?.Invoke();
+                    _actionRefreshAll?.Invoke();
                 }
                 else
                     IsSelected = true;
+                _actionUpdateJewel?.Invoke();
                 break;
             case Define.JewelSelectType.Sell:
                 // TODO Click and check all
@@ -140,9 +160,6 @@ public class UI_JewelItem : UI_Base
                 }
                 else
                     IsSelected = true;
-                break;
-            case Define.JewelSelectType.Sort:
-                // TODO No Click
                 break;
         }
         Refresh();

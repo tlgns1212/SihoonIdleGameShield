@@ -62,7 +62,6 @@ public class Define
         Assemble,
         Disassemble,
         Sell,
-        Sort,
     }
 
     public enum AccessoriesType
