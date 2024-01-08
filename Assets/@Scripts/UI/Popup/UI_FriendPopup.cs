@@ -42,16 +42,39 @@ public class UI_FriendPopup : UI_Popup
         {
             UI_FriendItem ai = Managers.UI.MakeSubItem<UI_FriendItem>(GetObject((int)GameObjects.FriendItem).transform);
             _items.Add(ai);
-            ai.SetInfo(10001 + i, _scrollRect, () =>
-            {
-                foreach (UI_FriendItem item in _items)
-                {
-                    item.Refresh();
-                }
-            });
+            ai.SetInfo(10001 + i, _scrollRect, RefreshAllItems, CalculateAllLValue);
         }
 
         return true;
+    }
+
+    void RefreshAllItems()
+    {
+        foreach (UI_FriendItem item in _items)
+        {
+            item.Refresh();
+        }
+    }
+
+    void CalculateAllLValue()
+    {
+        int atk = 0;
+        int atkRate = 0;
+        // TODO 공격력, 공격속도 말고 다른것도 추가하기
+        foreach (UI_FriendItem item in _items)
+        {
+            switch (item._effectType)
+            {
+                case Define.FriendEffectType.Atk:
+                    atk += item._friendGameData.LValue;
+                    break;
+                case Define.FriendEffectType.AtkRate:
+                    atkRate += item._friendGameData.LValue;
+                    break;
+            }
+        }
+        Managers.Game.ContinueInfo.FriAtk = atk;
+        Managers.Game.ContinueInfo.FriAtkRate = atkRate;
     }
 
     public void SetInfo()

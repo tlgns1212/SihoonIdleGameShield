@@ -32,6 +32,8 @@ public class UI_DungeonItem : UI_Base
     ScrollRect _scrollRect;
     Action _action;
     bool _isDrag = false;
+    Data.DungeonData _data;
+    DungeonGameData _dungeonGameData;
 
     private void Awake()
     {
@@ -46,7 +48,9 @@ public class UI_DungeonItem : UI_Base
         BindImage(typeof(Images));
         BindButton(typeof(Buttons));
 
-        Refresh();
+        GetButton((int)Buttons.VisitButton).gameObject.BindEvent(OnClickVisitButton);
+
+        // Refresh();
 
         return true;
     }
@@ -55,24 +59,55 @@ public class UI_DungeonItem : UI_Base
     {
         _scrollRect = scrollRect;
         _action = callback;
-        Data.DungeonData data = Managers.Data.DungeonDic[dungeonID];
+        _data = Managers.Data.DungeonDic[dungeonID];
 
-        GetText((int)Texts.TitleText).text = data.TitleText;
-        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(data.IconLabel);
-        GetText((int)Texts.VisitedText).text = data.MaxVisitText;
-        // TODO : 현재 출입 횟수 지정하기
-        GetText((int)Texts.VisitedLeftText).text = $"10/{data.MaxVisitNum}";
+        GetText((int)Texts.TitleText).text = _data.TitleText;
+        GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
 
-        if (data.LockOpenLevel <= Managers.Game.UserLevel)
+        if (Managers.Game.DungeonLevelDictionary.TryGetValue(dungeonID, out DungeonGameData value))
         {
-            // TODO 잠금 풀기(지금 잠금이 없음 만들어야 함)
+            _dungeonGameData = value;
         }
+        else
+        {
+            DungeonGameData dGameData = new DungeonGameData() { TodayMaxNum = _data.MaxVisitNum, Type = _data.DungeonType };
+            _dungeonGameData = dGameData;
+        }
+
+        if (_data.LockOpenLevel <= Managers.Game.UserLevel)
+        {
+            GetImage((int)Images.LockButtonImage).gameObject.SetActive(false);
+        }
+
+        if (_dungeonGameData.Type == Define.DungeonType.Mine)
+        {
+            GetText((int)Texts.VisitedText).gameObject.SetActive(false);
+            GetText((int)Texts.VisitedLeftText).gameObject.SetActive(false);
+        }
+        else
+        {
+            GetText((int)Texts.VisitedText).text = _data.MaxVisitText;
+        }
+
 
         Refresh();
     }
 
     public void Refresh()
     {
+        if (_dungeonGameData.Type == Define.DungeonType.Mine)
+            return;
+        GetText((int)Texts.VisitedLeftText).text = $"{_dungeonGameData.TodayMaxNum - _dungeonGameData.TodayVisitedNum}/{_dungeonGameData.TodayMaxNum}";
+    }
+
+    void OnClickVisitButton()
+    {
+        if (_dungeonGameData.TodayVisitedNum >= _dungeonGameData.TodayMaxNum)
+            return;
+        if (_dungeonGameData.Type != Define.DungeonType.Mine)
+            _dungeonGameData.TodayVisitedNum += 1;
+        // TODO GOTO Popup;
+        Refresh();
 
     }
 

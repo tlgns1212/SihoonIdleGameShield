@@ -3,6 +3,7 @@
         {
             "DataId": 10001,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -23,26 +24,28 @@
         {
             "DataId": 10002,
             "TitleText": "빠른친구",
+            "ItemEffect": 1,
             "ItemEffectText": "공격 속도",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_14.sprite",
             "FirstBuyCost" : 500,
             "BuyResource": "DEnergy",
             "LevelDatas": [
-                { "Level": 0, "LValue":1, "NextCost": 3},
-                { "Level": 1, "LValue":2, "NextCost": 6},
-                { "Level": 2, "LValue":3, "NextCost": 9},
-                { "Level": 3, "LValue":4, "NextCost": 12},
-                { "Level": 4, "LValue":5, "NextCost": 15},
-                { "Level": 5, "LValue":6, "NextCost": 18},
-                { "Level": 6, "LValue":7, "NextCost": 21},
-                { "Level": 7, "LValue":8, "NextCost": 24},
-                { "Level": 8, "LValue":9, "NextCost": 270}
+                { "Level": 0, "LValue":10, "NextCost": 3},
+                { "Level": 1, "LValue":20, "NextCost": 6},
+                { "Level": 2, "LValue":30, "NextCost": 9},
+                { "Level": 3, "LValue":40, "NextCost": 12},
+                { "Level": 4, "LValue":50, "NextCost": 15},
+                { "Level": 5, "LValue":60, "NextCost": 18},
+                { "Level": 6, "LValue":70, "NextCost": 21},
+                { "Level": 7, "LValue":80, "NextCost": 24},
+                { "Level": 8, "LValue":90, "NextCost": 270}
             ]
         },
         {
             "DataId": 10003,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -63,6 +66,7 @@
         {
             "DataId": 10004,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_10.sprite",
@@ -83,6 +87,7 @@
         {
             "DataId": 10005,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -103,6 +108,7 @@
         {
             "DataId": 10006,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_14.sprite",
@@ -123,6 +129,7 @@
         {
             "DataId": 10007,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -143,6 +150,7 @@
         {
             "DataId": 10008,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -163,6 +171,7 @@
         {
             "DataId": 10009,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -183,6 +192,7 @@
         {
             "DataId": 10010,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -203,6 +213,7 @@
         {
             "DataId": 10011,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",
@@ -223,6 +234,7 @@
         {
             "DataId": 10012,
             "TitleText": "일반친구",
+            "ItemEffect": 0,
             "ItemEffectText": "공격력",
             "PrefabLabel": "FriendItem",
             "IconLabel": "icons_12.sprite",

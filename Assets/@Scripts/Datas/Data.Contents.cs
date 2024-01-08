@@ -113,6 +113,7 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
+        public Define.DungeonType DungeonType;
         public string MaxVisitText;
         public int MaxVisitNum;
         public int LockOpenLevel;
@@ -140,6 +141,7 @@ namespace Data
     {
         public int DataID;
         public string TitleText;
+        public int ItemEffect;
         public string ItemEffectText;
         public string PrefabLabel;
         public string IconLabel;

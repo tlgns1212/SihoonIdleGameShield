@@ -37,9 +37,11 @@ public class UI_FriendItem : UI_Base
 
     ScrollRect _scrollRect;
     Action _action;
+    Action _calcAllLValue;
     bool _isDrag = false;
     Data.FriendData _data;
-    FriendGameData _friendGameData;
+    public FriendGameData _friendGameData;
+    public Define.FriendEffectType _effectType = Define.FriendEffectType.Atk;
     Define.ResourceType _buyResource = Define.ResourceType.DimensionEnergy;
 
     private void Awake()
@@ -63,10 +65,11 @@ public class UI_FriendItem : UI_Base
         return true;
     }
 
-    public void SetInfo(int friendID, ScrollRect scrollRect, Action callback)
+    public void SetInfo(int friendID, ScrollRect scrollRect, Action callback, Action calcLValue)
     {
         _scrollRect = scrollRect;
         _action = callback;
+        _calcAllLValue = calcLValue;
         _data = Managers.Data.FriendDic[friendID];
 
         GetImage((int)Images.ItemIcon).sprite = Managers.Resource.Load<Sprite>(_data.IconLabel);
@@ -115,13 +118,14 @@ public class UI_FriendItem : UI_Base
             GetImage((int)Images.GoldImage).sprite = Managers.Resource.Load<Sprite>("GUI_21");
         }
 
+        _effectType = (Define.FriendEffectType)_data.ItemEffect;
 
         Refresh();
     }
 
     public void Refresh()
     {
-        GetText((int)Texts.TitleText).text = $"{_data.TitleText} LV{10} (MAX{_data.LevelDatas.Count})";
+        GetText((int)Texts.TitleText).text = $"{_data.TitleText} LV{_friendGameData.Level} (MAX{_data.LevelDatas.Count})";
         GetText((int)Texts.ATKStatText).text = _friendGameData.LValue.ToString();
         GetText((int)Texts.PlusNumText).text = GetLValue().ToString();
         GetText((int)Texts.BuyCostText).text = GetCost().ToString();
@@ -140,7 +144,7 @@ public class UI_FriendItem : UI_Base
         _friendGameData.LValue = _data.LevelDatas[_friendGameData.Level].LValue;
         _friendGameData.BuyCost = _data.LevelDatas[_friendGameData.Level].NextCost;
 
-
+        _calcAllLValue?.Invoke();
         Refresh();
     }
 

@@ -45,6 +45,7 @@ public class UI_JewelPopup : UI_Popup
         DFirstGradeText,
         DSecondGradeText,
         DThirdGradeText,
+        JewelSortText
     }
 
     #endregion
@@ -53,6 +54,7 @@ public class UI_JewelPopup : UI_Popup
     List<UI_JewelItem> _items = new List<UI_JewelItem>();
     public List<UI_JewelItem> _selectedItems = new List<UI_JewelItem>();
     public Define.JewelSelectType _selectType = Define.JewelSelectType.Nothing;
+    Define.JewelSortType _sortType = Define.JewelSortType.GetDate;
 
     private void Awake()
     {
@@ -104,6 +106,7 @@ public class UI_JewelPopup : UI_Popup
         }
 
         Refresh();
+        OnClickJewelSort();
 
         return true;
     }
@@ -126,6 +129,16 @@ public class UI_JewelPopup : UI_Popup
         for (int i = _selectedItems.Count - 1; i >= 0; i--)
             _selectedItems[i].IsSelected = false;
         _selectedItems.Clear();
+
+        string sortType = "이름";
+        if (_sortType == Define.JewelSortType.Grade)
+            sortType = "등급";
+        else if (_sortType == Define.JewelSortType.Name)
+            sortType = "이름";
+        else if (_sortType == Define.JewelSortType.GetDate)
+            sortType = "습득일";
+
+        GetText((int)Texts.JewelSortText).text = $"정렬:{sortType}";
 
         RectTransform viewportRT = GetObject((int)GameObjects.Viewport).GetComponent<RectTransform>();
         if (_selectType == Define.JewelSelectType.Assemble)
@@ -238,9 +251,28 @@ public class UI_JewelPopup : UI_Popup
 
     void OnClickJewelSort()
     {
-        // TODOTODO 정렬하기
-        // _items = _items.OrderBy(x => x._data)
-
+        // TODOTODO 나중에 정렬 후 데이터에 저장하기 임시 _items 리스트 말고
+        // 현재 Grade면 다음 Name으로 정렬하기
+        switch (_sortType)
+        {
+            case Define.JewelSortType.Grade:
+                _sortType = Define.JewelSortType.Name;
+                _items = _items.OrderBy(x => x._data.IconLabel).ToList();
+                break;
+            case Define.JewelSortType.Name:
+                _sortType = Define.JewelSortType.GetDate;
+                _items = _items.OrderBy(x => x._data.JewelName).ToList();
+                break;
+            case Define.JewelSortType.GetDate:
+                // TODO 취득날짜가 아직 없음 수정후 반영할 것^^
+                _sortType = Define.JewelSortType.Grade;
+                _items = _items.OrderBy(x => x._data.Grade).ToList();
+                break;
+        }
+        for (int i = 0; i < _items.Count; i++)
+        {
+            _items[i].GetComponent<RectTransform>().SetSiblingIndex(i);
+        }
         Refresh();
     }
 

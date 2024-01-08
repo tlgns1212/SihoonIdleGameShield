@@ -31,6 +31,7 @@ public class GameData
     public Dictionary<int, SaviourGameData> SaviourLevelDictionary = new Dictionary<int, SaviourGameData>();
     public Dictionary<int, AccessoriesGameData> AccessoriesLevelDictionary = new Dictionary<int, AccessoriesGameData>();
     public Dictionary<int, FriendGameData> FriendLevelDictionary = new Dictionary<int, FriendGameData>();
+    public Dictionary<int, DungeonGameData> DungeonLevelDictionary = new Dictionary<int, DungeonGameData>();
     public List<JewelGameData> JewelLevels = new List<JewelGameData>();
     public int JewelNewID = 1;
 }
@@ -42,13 +43,15 @@ public class ContinueData
     public bool IsContinue { get { return PlayerDataID != 0; } }
     public float Hp;
     public float MaxHp;
-    public float Atk { get { return 1 + ShiAtk + AccAtk; } }
+    public float Atk { get { return 1 + ShiAtk + AccAtk + FriAtk; } }
     public float ShiAtk;
     public float AccAtk;
+    public float FriAtk;
     public float MoveSpeed { get { return AccMoveSpeed; } }
     public float AccMoveSpeed;
-    public float AtkRate { get { return 1 + AccAtkRate; } }
+    public float AtkRate { get { return 1 + AccAtkRate + FriAtkRate; } }
     public float AccAtkRate;
+    public float FriAtkRate;
     public float CriDamage { get { return AccCriDamage; } }
     public float AccCriDamage;
     public float CriRate { get { return AccCriRate; } }
@@ -79,8 +82,10 @@ public class ContinueData
         MaxHp = 0f;
         ShiAtk = 1f;
         AccAtk = 0f;
+        FriAtk = 0f;
         AccMoveSpeed = 0f;
         AccAtkRate = 1f;
+        FriAtkRate = 0f;
         AccCriDamage = 1f;
         AccCriRate = 0f;
         Level = 1;
@@ -143,6 +148,13 @@ public class JewelGameData
     public int LValue = 0;
     public int GradeNum = 0;
     public bool isUsed = false;
+}
+[Serializable]
+public class DungeonGameData
+{
+    public Define.DungeonType Type = DungeonType.DungeonBreak;
+    public int TodayVisitedNum = 0;
+    public int TodayMaxNum = 0;
 }
 
 public class GameManager
@@ -246,6 +258,11 @@ public class GameManager
     {
         get { return _gameData.FriendLevelDictionary; }
         set { _gameData.FriendLevelDictionary = value; }
+    }
+    public Dictionary<int, DungeonGameData> DungeonLevelDictionary
+    {
+        get { return _gameData.DungeonLevelDictionary; }
+        set { _gameData.DungeonLevelDictionary = value; }
     }
     public List<JewelGameData> JewelLevels
     {

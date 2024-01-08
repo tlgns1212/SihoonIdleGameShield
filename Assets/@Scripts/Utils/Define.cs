@@ -31,6 +31,14 @@ public class Define
         Attacking,
     }
 
+    public enum DungeonType
+    {
+        DungeonBreak,
+        BossRaid,
+        PVP,
+        Mine,
+    }
+
     public enum EquipmentType
     {
         Helmet,
@@ -62,6 +70,20 @@ public class Define
         Assemble,
         Disassemble,
         Sell,
+    }
+
+    public enum JewelSortType
+    {
+        Grade,
+        Name,
+        GetDate,
+    }
+
+    public enum FriendEffectType
+    {
+        Atk,
+        AtkRate,
+        etc,
     }
 
     public enum AccessoriesType

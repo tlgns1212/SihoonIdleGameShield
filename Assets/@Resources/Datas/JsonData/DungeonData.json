@@ -3,6 +3,7 @@
         {
             "DataId": 10001,
             "TitleText": "던전 브레이크",
+            "DungeonType" : 0,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 0,
@@ -13,6 +14,7 @@
         {
             "DataId": 10002,
             "TitleText": "보스 레이드",
+            "DungeonType" : 1,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 0,
@@ -23,6 +25,7 @@
         {
             "DataId": 10003,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -32,10 +35,11 @@
         },
         {
             "DataId": 10004,
-            "TitleText": "결투장",
+            "TitleText": "광산",
+            "DungeonType" : 3,
             "MaxVisitText": "출입 횟수",
-            "MaxVisitNum": 3,
-            "LockOpenLevel": 10,
+            "MaxVisitNum": 100,
+            "LockOpenLevel": 20,
             "PrefabLabel": "DungeonItem",
             "IconLabel": "icons_51.sprite",
             "BuyResource": "Ruby"
@@ -43,6 +47,7 @@
         {
             "DataId": 10005,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -53,6 +58,7 @@
         {
             "DataId": 10006,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -63,6 +69,7 @@
         {
             "DataId": 10007,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -73,6 +80,7 @@
         {
             "DataId": 10008,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -83,6 +91,7 @@
         {
             "DataId": 10009,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -93,6 +102,7 @@
         {
             "DataId": 10010,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -103,6 +113,7 @@
         {
             "DataId": 10011,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
@@ -113,6 +124,7 @@
         {
             "DataId": 10012,
             "TitleText": "결투장",
+            "DungeonType" : 2,
             "MaxVisitText": "출입 횟수",
             "MaxVisitNum": 3,
             "LockOpenLevel": 10,
