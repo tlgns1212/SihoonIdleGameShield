@@ -1,12 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Define
 {
-    public static readonly Dictionary<Type, Array> _enumDict = new Dictionary<Type, Array>();
-
     public enum Scene
     {
         Unknown,
