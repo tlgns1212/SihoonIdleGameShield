@@ -70,8 +70,8 @@ public class UI_DungeonItem : UI_Base
         }
         else
         {
-            DungeonGameData dGameData = new DungeonGameData() { TodayMaxNum = _data.MaxVisitNum, Type = _data.DungeonType };
-            _dungeonGameData = dGameData;
+            _dungeonGameData = new DungeonGameData() { TodayMaxNum = _data.MaxVisitNum, Type = _data.DungeonType };
+            Managers.Game.DungeonLevelDictionary.Add(dungeonID, _dungeonGameData);
         }
 
         if (_data.LockOpenLevel <= Managers.Game.UserLevel)
@@ -97,6 +97,15 @@ public class UI_DungeonItem : UI_Base
     {
         if (_dungeonGameData.Type == Define.DungeonType.Mine)
             return;
+        if (_dungeonGameData.TodayMaxNum - _dungeonGameData.TodayVisitedNum <= 0)
+        {
+            GetText((int)Texts.VisitText).text = "방문불가";
+        }
+        else
+        {
+            GetText((int)Texts.VisitText).text = "방문하기";
+        }
+
         GetText((int)Texts.VisitedLeftText).text = $"{_dungeonGameData.TodayMaxNum - _dungeonGameData.TodayVisitedNum}/{_dungeonGameData.TodayMaxNum}";
     }
 

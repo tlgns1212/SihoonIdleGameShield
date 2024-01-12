@@ -556,6 +556,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d28cae94e6ea5845b44e428cf639fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jewelGameData:
+    ID: 0
+    DataID: 10001
+    LValue: 0
+    GradeNum: 0
+    isUsed: 0
 --- !u!1 &7678947893428131855
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_ShopPopup : UI_Popup
+public class UI_BossRaidPopup : UI_Base
 {
+    // TODO : BooRaidPopup
     #region Enum
     enum Texts
     {
