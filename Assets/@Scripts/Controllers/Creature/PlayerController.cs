@@ -135,12 +135,14 @@ public class PlayerController : CreatureController
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag("Monster")) return;
         _targetMC = other.GetOrAddComponent<MonsterController>();
         CreatureState = Define.CreatureState.Attacking;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Monster")) return;
         _targetMC = null;
         CreatureState = Define.CreatureState.Moving;
     }
